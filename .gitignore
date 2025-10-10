@@ -69,11 +69,10 @@ temp/
 # dotenv environment variables file
 .env
 
-# Playwright
+# Development tools
 .playwright-mcp/
-
-# Claude AI
 .claude/
+backup-docs/
 
 # WordPress specific
 wp-config.php
@@ -92,3 +91,9 @@ wp-content/wp-cache-config.php
 *.zip
 *.tar.gz
 *.rar
+
+# Documentation files (not needed for deployment)
+*.md
+*.docx
+*.json
+*.xml
