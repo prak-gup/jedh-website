@@ -1,0 +1,312 @@
+/*
+Theme Name: JEDH - Jaipur Eye & Dental Hospital
+Description: Custom WordPress theme for Jaipur Eye & Dental Hospital. Professional medical website with eye care and dental services, bilingual support, and booking system.
+Version: 1.0.0
+Author: JEDH Development Team
+Text Domain: jedh
+Domain Path: /languages
+Requires at least: 5.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: medical, healthcare, eye-care, dental, bilingual, responsive, custom-post-types
+*/
+
+/* Import main styles */
+@import url('css/style.css');
+@import url('css/pages.css');
+
+/* WordPress specific styles */
+.alignleft {
+    float: left;
+    margin-right: 1rem;
+}
+
+.alignright {
+    float: right;
+    margin-left: 1rem;
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto;
+}
+
+.wp-caption {
+    max-width: 100%;
+}
+
+.wp-caption-text {
+    font-size: 0.875rem;
+    color: #666;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* WordPress admin bar adjustment */
+body.admin-bar .navbar {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar .navbar {
+        top: 46px;
+    }
+}
+
+/* WordPress menu styles */
+.nav-menu .current-menu-item > a,
+.nav-menu .current_page_item > a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* WordPress post content styles */
+.entry-content {
+    line-height: 1.6;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.entry-content p {
+    margin-bottom: 1rem;
+}
+
+.entry-content ul,
+.entry-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.entry-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* WordPress comment styles */
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+}
+
+.comment-author {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.comment-meta {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.comment-content {
+    line-height: 1.6;
+}
+
+/* WordPress search form */
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.search-form input[type="search"] {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-form input[type="submit"] {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* WordPress pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+}
+
+.pagination a,
+.pagination span {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination .current {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* WordPress widget styles */
+.widget {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.widget-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.widget li {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.widget li:last-child {
+    border-bottom: none;
+}
+
+.widget a {
+    color: #333;
+    text-decoration: none;
+}
+
+.widget a:hover {
+    color: var(--primary-color);
+}
+
+/* WordPress form styles */
+.wpcf7-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.wpcf7-form p {
+    margin-bottom: 1rem;
+}
+
+.wpcf7-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form textarea,
+.wpcf7-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.wpcf7-form input[type="submit"] {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+    background: var(--primary-dark);
+}
+
+/* WordPress error and success messages */
+.wpcf7-response-output {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.wpcf7-mail-sent-ok {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.wpcf7-validation-errors {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* WordPress gallery styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* WordPress responsive adjustments */
+@media (max-width: 768px) {
+    .alignleft,
+    .alignright {
+        float: none;
+        margin: 0 0 1rem 0;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .search-form {
+        flex-direction: column;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,198 @@
+{
+  "pages": [
+    {
+      "url": "/",
+      "title": "Jaipur Eye & Dental Hospital | Best Eye Care & Dental Clinic in Jaipur",
+      "metaDescription": "JEDH offers comprehensive eye and dental care in Jaipur since 2008. Cataract surgery, LASIK, dental implants, Invisalign. 10k+ patients. Book same-week consultation.",
+      "keywords": "eye hospital Jaipur, dental clinic Jaipur, eye and dental care Jaipur, best eye hospital Jaipur, best dental clinic Jaipur",
+      "h1": "Trusted Eye and Dental Care in Jaipur",
+      "schema": ["Organization", "MedicalBusiness", "LocalBusiness", "WebSite"],
+      "primaryCTA": "Book on WhatsApp",
+      "secondaryCTA": "Call +91 9602227267"
+    },
+    {
+      "url": "/eye",
+      "title": "Eye Care Services in Jaipur | Ophthalmology | JEDH",
+      "metaDescription": "Comprehensive eye care services in Jaipur. Cataract surgery, LASIK, glaucoma treatment, pediatric eye care. Experienced ophthalmologists. Book consultation.",
+      "keywords": "eye care Jaipur, ophthalmologist Jaipur, eye specialist Jaipur, eye doctor Jaipur",
+      "h1": "Complete Eye Care Services for Your Family",
+      "schema": ["MedicalBusiness", "Physician"],
+      "primaryCTA": "Explore Eye Services"
+    },
+    {
+      "url": "/eye/cataract-surgery",
+      "title": "Cataract Surgery in Jaipur | Phaco & Femto | From ₹18,000 | JEDH",
+      "metaDescription": "Advanced cataract surgery in Jaipur. Phaco & Femto lasik. Premium lenses available. Painless procedure. ₹18,000-₹1.25 lakh. Book evaluation today.",
+      "keywords": "cataract surgery Jaipur, best cataract surgeon Jaipur, cataract operation cost Jaipur, phaco surgery Jaipur",
+      "h1": "Advanced Cataract Surgery in Jaipur",
+      "schema": ["MedicalProcedure", "Physician", "FAQPage", "Offer"],
+      "primaryCTA": "Book Cataract Evaluation",
+      "secondaryCTA": "WhatsApp Now"
+    },
+    {
+      "url": "/eye/lasik-prk",
+      "title": "LASIK Surgery in Jaipur | Contoura Vision | ₹35,000-₹70,000 | JEDH",
+      "metaDescription": "LASIK & PRK eye surgery in Jaipur. Contoura Vision technology. Bladeless procedure. Quick recovery. ₹35,000-₹70,000 per eye. Book free screening.",
+      "keywords": "LASIK Jaipur, PRK Jaipur, laser eye surgery Jaipur, Contoura Vision Jaipur, LASIK cost Jaipur",
+      "h1": "LASIK & PRK Laser Eye Surgery",
+      "schema": ["MedicalProcedure", "Physician", "FAQPage", "Offer"],
+      "primaryCTA": "Book Free LASIK Screening",
+      "secondaryCTA": "Check Eligibility"
+    },
+    {
+      "url": "/eye/glaucoma",
+      "title": "Glaucoma Treatment in Jaipur | Glaucoma Specialist | JEDH",
+      "metaDescription": "Expert glaucoma care in Jaipur. Early detection, medication, laser & surgery. Prevent vision loss. Experienced glaucoma specialists. Book appointment.",
+      "keywords": "glaucoma specialist Jaipur, glaucoma treatment Jaipur, eye pressure test Jaipur, glaucoma doctor Jaipur",
+      "h1": "Expert Glaucoma Care & Treatment",
+      "schema": ["MedicalBusiness", "Physician", "FAQPage"],
+      "primaryCTA": "Book Glaucoma Check"
+    },
+    {
+      "url": "/eye/pediatric-myopia",
+      "title": "Pediatric Myopia Control in Jaipur | Children's Eye Care | JEDH",
+      "metaDescription": "Myopia control for children in Jaipur. Atropine drops, outdoor activity guidance. Prevent progression. Child-friendly environment. Book check-up.",
+      "keywords": "pediatric myopia Jaipur, myopia control Jaipur, children eye care Jaipur, atropine drops Jaipur",
+      "h1": "Pediatric Myopia Control & Management",
+      "schema": ["MedicalBusiness", "Physician", "FAQPage"],
+      "primaryCTA": "Book Child Eye Check"
+    },
+    {
+      "url": "/dental",
+      "title": "Dental Care Services in Jaipur | Best Dentist | JEDH",
+      "metaDescription": "Comprehensive dental care in Jaipur. Dental implants, Invisalign, cosmetic dentistry, root canal. Painless procedures. Experienced dentists. Book now.",
+      "keywords": "dental clinic Jaipur, dentist near me Jaipur, dental care Jaipur, best dentist Jaipur",
+      "h1": "Complete Dental Care for Your Family",
+      "schema": ["Dentist", "Organization"],
+      "primaryCTA": "Explore Dental Services"
+    },
+    {
+      "url": "/dental/implants",
+      "title": "Dental Implants in Jaipur | German Systems | ₹25,000-₹1 Lakh | JEDH",
+      "metaDescription": "Premium dental implants in Jaipur. German implant systems. 3-stage process. ₹25,000-₹1 lakh per tooth. Expert prosthodontists. Book 3D scan.",
+      "keywords": "dental implants Jaipur, best implant dentist Jaipur, dental implant cost Jaipur, German implants Jaipur",
+      "h1": "Premium Dental Implants in Jaipur",
+      "schema": ["MedicalProcedure", "Dentist", "FAQPage", "Offer"],
+      "primaryCTA": "Book Free 3D Scan",
+      "secondaryCTA": "Get Implant Quote"
+    },
+    {
+      "url": "/dental/invisalign",
+      "title": "Invisalign in Jaipur | Clear Aligners | From ₹75,000 | JEDH",
+      "metaDescription": "Invisalign clear aligners in Jaipur. Certified orthodontist. Digital smile simulation. Discreet treatment. From ₹75,000. Book consultation.",
+      "keywords": "Invisalign Jaipur, clear aligners Jaipur, teeth straightening Jaipur, invisible braces Jaipur",
+      "h1": "Invisalign Clear Aligners in Jaipur",
+      "schema": ["MedicalProcedure", "Dentist", "FAQPage", "Offer"],
+      "primaryCTA": "Book Smile Simulation",
+      "secondaryCTA": "WhatsApp Consult"
+    },
+    {
+      "url": "/dental/cosmetic",
+      "title": "Cosmetic Dentistry in Jaipur | Veneers, Whitening | JEDH",
+      "metaDescription": "Cosmetic dentistry in Jaipur. Teeth whitening, veneers, smile makeover. Digital Smile Design. Natural results. Book design consultation.",
+      "keywords": "cosmetic dentist Jaipur, teeth whitening Jaipur, dental veneers Jaipur, smile makeover Jaipur",
+      "h1": "Transform Your Smile with Cosmetic Dentistry",
+      "schema": ["Dentist", "Offer", "FAQPage"],
+      "primaryCTA": "Book Smile Design Consult"
+    },
+    {
+      "url": "/dental/preventive",
+      "title": "Preventive Dental Care in Jaipur | Checkup & Cleaning | JEDH",
+      "metaDescription": "Preventive dental care in Jaipur. Regular checkups, cleaning, fluoride treatment, sealants. Family dental plans. Book appointment.",
+      "keywords": "dental checkup Jaipur, dental cleaning Jaipur, fluoride treatment Jaipur, preventive dentistry Jaipur",
+      "h1": "Preventive Dental Care for Healthy Smiles",
+      "schema": ["Dentist", "MedicalBusiness"],
+      "primaryCTA": "Book Cleaning Today"
+    },
+    {
+      "url": "/doctors",
+      "title": "Our Doctors | Eye & Dental Specialists in Jaipur | JEDH",
+      "metaDescription": "Meet our experienced eye and dental specialists in Jaipur. 17+ years experience. MS, MDS, Fellowship trained. Bilingual care. Choose your doctor.",
+      "keywords": "eye doctor Jaipur, dental doctor Jaipur, best doctors Jaipur, ophthalmologist Jaipur, dentist Jaipur",
+      "h1": "Our Expert Eye & Dental Specialists",
+      "schema": ["Physician", "Person", "MedicalBusiness"],
+      "primaryCTA": "Choose Your Doctor"
+    },
+    {
+      "url": "/pricing",
+      "title": "Transparent Pricing | Eye & Dental Treatment Costs in Jaipur | JEDH",
+      "metaDescription": "Clear pricing for eye and dental treatments in Jaipur. Cataract from ₹18k, LASIK ₹35k-70k, Implants ₹25k-1L. EMI available. Get personalized quote.",
+      "keywords": "dental implant cost Jaipur, cataract surgery cost Jaipur, LASIK cost Jaipur, eye treatment price Jaipur",
+      "h1": "Transparent Treatment Pricing",
+      "schema": ["Offer", "PriceSpecification", "MedicalBusiness"],
+      "primaryCTA": "Get Personalized Quote"
+    },
+    {
+      "url": "/reviews",
+      "title": "Patient Reviews & Testimonials | JEDH Jaipur",
+      "metaDescription": "Read real patient reviews for JEDH Jaipur. 4.8★ rating. 10,000+ satisfied patients. Eye and dental care testimonials. Book your consultation.",
+      "keywords": "JEDH reviews, eye clinic reviews Jaipur, dental clinic reviews Jaipur, patient testimonials Jaipur",
+      "h1": "What Our Patients Say",
+      "schema": ["Review", "AggregateRating", "ItemList"],
+      "primaryCTA": "Book Consultation"
+    },
+    {
+      "url": "/nri",
+      "title": "Medical Tourism for NRIs | Eye & Dental Care in India | JEDH",
+      "metaDescription": "NRI-friendly eye and dental care in Jaipur. Combined packages. Hotel assistance. Remote follow-ups. Pre-arrival consultations. Plan your visit.",
+      "keywords": "medical tourism Jaipur, eye surgery India for NRIs, dental India NRI, NRI medical packages India",
+      "h1": "Medical Tourism for NRI Patients",
+      "schema": ["LocalBusiness", "Organization", "MedicalBusiness"],
+      "primaryCTA": "Plan Visit on WhatsApp"
+    },
+    {
+      "url": "/nri/usa",
+      "title": "Eye & Dental Care in India for USA Patients | JEDH Jaipur",
+      "metaDescription": "Eye and dental treatments in India for USA patients. Affordable cataract, LASIK, implants. Insurance guidance. Book pre-arrival consultation.",
+      "keywords": "eye surgery India for NRIs, dental implants India NRI, LASIK India USA patients, medical tourism USA India",
+      "h1": "Healthcare Packages for USA Patients",
+      "schema": ["LocalBusiness", "MedicalBusiness"],
+      "primaryCTA": "Start USA Patient Plan"
+    },
+    {
+      "url": "/nri/uk",
+      "title": "Eye & Dental Care in India for UK Patients | JEDH Jaipur",
+      "metaDescription": "Eye and dental treatments in India for UK patients. Quality care at affordable prices. Visa support. Book pre-arrival consultation.",
+      "keywords": "eye surgery India for NRIs, dental implants India NRI, Invisalign India UK patients",
+      "h1": "Healthcare Packages for UK Patients",
+      "schema": ["LocalBusiness", "MedicalBusiness"],
+      "primaryCTA": "Start UK Patient Plan"
+    },
+    {
+      "url": "/nri/middle-east",
+      "title": "Eye & Dental Care in India for Middle East Patients | JEDH",
+      "metaDescription": "Eye and dental treatments in India for Middle East patients. Quick turnaround. Airport transfers. Book pre-arrival consultation.",
+      "keywords": "eye surgery India for NRIs, dental implants India NRI, PRK India Middle East patients",
+      "h1": "Healthcare Packages for Middle East Patients",
+      "schema": ["LocalBusiness", "MedicalBusiness"],
+      "primaryCTA": "Start ME Patient Plan"
+    },
+    {
+      "url": "/blog",
+      "title": "Eye & Dental Health Blog | JEDH Jaipur",
+      "metaDescription": "Educational articles about eye and dental health. Expert tips, treatment guides, patient stories. Stay informed with JEDH blog.",
+      "keywords": "eye care blog, dental health blog, eye treatment information, dental treatment guide",
+      "h1": "Eye & Dental Health Blog",
+      "schema": ["Blog", "Organization"],
+      "primaryCTA": "Read Latest Posts"
+    },
+    {
+      "url": "/contact",
+      "title": "Contact Us | Visit JEDH Eye & Dental Hospital in Jaipur",
+      "metaDescription": "Visit JEDH in Jaipur. Call +91 9602227267. WhatsApp booking. Parking available. Open 6 days. Get directions and book appointment.",
+      "keywords": "eye clinic Jaipur contact, dental clinic Jaipur contact, JEDH Jaipur location, eye hospital Jaipur address",
+      "h1": "Visit Our Clinic in Jaipur",
+      "schema": ["LocalBusiness", "ContactPoint"],
+      "primaryCTA": "Get Directions"
+    },
+    {
+      "url": "/book",
+      "title": "Book Appointment | JEDH Eye & Dental Hospital Jaipur",
+      "metaDescription": "Book eye or dental appointment at JEDH Jaipur. Same-week consultations available. WhatsApp booking. Call +91 9602227267.",
+      "keywords": "book eye appointment Jaipur, book dental appointment Jaipur, JEDH booking, eye clinic appointment",
+      "h1": "Book Your Appointment",
+      "schema": ["LocalBusiness", "WebSite", "MedicalBusiness"],
+      "primaryCTA": "Submit Booking"
+    }
+  ]
+}
