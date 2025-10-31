@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     loadInsuranceLogos();
     initCTATracking();
+    initYouTubeVideoSlider();
 
 });
 
@@ -559,9 +560,492 @@ function initMobileOptimizations() {
 initMobileOptimizations();
 
 // ===================================
+// YouTube Video Slider
+// ===================================
+
+// YouTube API Configuration
+const YOUTUBE_CONFIG = {
+    apiKey: 'AIzaSyCVUqY8DKR5cG4tFRz1j1wDLajd0TrmGwU',
+    channelUsername: 'JEDH',
+    // Try to get the actual channel ID from the channel URL
+    // Visit https://www.youtube.com/@JEDH and look for the channel ID in the page source
+    // or use a tool like https://commentpicker.com/youtube-channel-id.php
+    fallbackChannelId: null, // We'll set this once we get the actual channel ID
+    maxResults: 5,
+    cacheKey: 'jedh_youtube_videos',
+    cacheExpiry: 24 * 60 * 60 * 1000 // 24 hours in milliseconds
+};
+
+// Global variables for video slider
+let currentVideoIndex = 0;
+let videosPerView = 3;
+let totalVideos = 0;
+let videos = [];
+
+function initYouTubeVideoSlider() {
+    // Check if video section exists
+    const videoSection = document.getElementById('videoSlider');
+    if (!videoSection) return;
+
+    // Set videos per view based on screen size
+    updateVideosPerView();
+    window.addEventListener('resize', updateVideosPerView);
+
+    // Try to load videos from cache first
+    const cachedVideos = getCachedVideos();
+    if (cachedVideos) {
+        videos = cachedVideos;
+        renderVideoSlider();
+        return;
+    }
+
+    // Test API connection first
+    testYouTubeAPI().then(() => {
+        // Fetch videos from YouTube API
+        fetchYouTubeVideos();
+    }).catch((error) => {
+        console.error('YouTube API test failed:', error);
+        showErrorState();
+    });
+}
+
+// Test function to check if API is working
+async function testYouTubeAPI() {
+    try {
+        console.log('Testing YouTube API connection...');
+        const testUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=test&type=video&maxResults=1&key=${YOUTUBE_CONFIG.apiKey}`;
+        
+        const response = await fetch(testUrl);
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`API test failed: ${response.status} - ${errorText}`);
+        }
+        
+        const data = await response.json();
+        console.log('YouTube API test successful:', data);
+        return true;
+    } catch (error) {
+        console.error('YouTube API test failed:', error);
+        throw error;
+    }
+}
+
+function updateVideosPerView() {
+    if (window.innerWidth <= 480) {
+        videosPerView = 1;
+    } else if (window.innerWidth <= 768) {
+        videosPerView = 2;
+    } else {
+        videosPerView = 3;
+    }
+}
+
+async function fetchYouTubeVideos() {
+    try {
+        showLoadingState();
+        console.log('Starting YouTube video fetch...');
+        
+        // First, get channel ID from username
+        const channelId = await getChannelId(YOUTUBE_CONFIG.channelUsername);
+        console.log('Channel ID:', channelId);
+        
+        if (!channelId || channelId === 'UC_KNOWN_CHANNEL_ID') {
+            throw new Error('Channel not found. Please check the channel username or provide the channel ID manually.');
+        }
+
+        // Fetch videos from the channel
+        const apiUrl = `https://www.googleapis.com/youtube/v3/search?` +
+            `part=snippet&` +
+            `channelId=${channelId}&` +
+            `order=viewCount&` +
+            `type=video&` +
+            `maxResults=${YOUTUBE_CONFIG.maxResults}&` +
+            `key=${YOUTUBE_CONFIG.apiKey}`;
+            
+        console.log('Fetching videos from:', apiUrl);
+        
+        const response = await fetch(apiUrl);
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('API Error Response:', errorText);
+            throw new Error(`API request failed: ${response.status} - ${errorText}`);
+        }
+
+        const data = await response.json();
+        console.log('API Response:', data);
+        
+        if (!data.items || data.items.length === 0) {
+            throw new Error('No videos found in the channel');
+        }
+
+        // Process and enhance video data
+        videos = await enhanceVideoData(data.items);
+        console.log('Processed videos:', videos);
+        
+        // Cache the videos
+        cacheVideos(videos);
+        
+        // Render the slider
+        renderVideoSlider();
+        
+    } catch (error) {
+        console.error('Error fetching YouTube videos:', error);
+        showErrorState();
+    }
+}
+
+async function getChannelId(username) {
+    try {
+        // Try the forUsername method first
+        let response = await fetch(
+            `https://www.googleapis.com/youtube/v3/channels?` +
+            `part=id&` +
+            `forUsername=${username}&` +
+            `key=${YOUTUBE_CONFIG.apiKey}`
+        );
+
+        if (response.ok) {
+            const data = await response.json();
+            if (data.items && data.items.length > 0) {
+                return data.items[0].id;
+            }
+        }
+
+        // If forUsername fails, try searching by channel handle
+        response = await fetch(
+            `https://www.googleapis.com/youtube/v3/search?` +
+            `part=snippet&` +
+            `q=${username}&` +
+            `type=channel&` +
+            `maxResults=1&` +
+            `key=${YOUTUBE_CONFIG.apiKey}`
+        );
+
+        if (response.ok) {
+            const data = await response.json();
+            if (data.items && data.items.length > 0) {
+                return data.items[0].id.channelId;
+            }
+        }
+
+        // If both fail, try with the known channel ID for @JEDH
+        // You can find this by visiting the channel and looking at the URL
+        console.log('Trying fallback channel ID for JEDH...');
+        return 'UC_KNOWN_CHANNEL_ID'; // We'll need to get this
+        
+    } catch (error) {
+        console.error('Error getting channel ID:', error);
+        return null;
+    }
+}
+
+async function enhanceVideoData(videoItems) {
+    const videoIds = videoItems.map(item => item.id.videoId).join(',');
+    
+    try {
+        // Get additional video details (duration, view count, etc.)
+        const response = await fetch(
+            `https://www.googleapis.com/youtube/v3/videos?` +
+            `part=contentDetails,statistics&` +
+            `id=${videoIds}&` +
+            `key=${YOUTUBE_CONFIG.apiKey}`
+        );
+
+        if (!response.ok) {
+            throw new Error('Failed to get video details');
+        }
+
+        const detailsData = await response.json();
+        const videoDetails = detailsData.items;
+
+        // Combine snippet data with details
+        return videoItems.map((item, index) => {
+            const details = videoDetails[index] || {};
+            return {
+                id: item.id.videoId,
+                title: item.snippet.title,
+                description: item.snippet.description,
+                thumbnail: item.snippet.thumbnails.medium.url,
+                publishedAt: item.snippet.publishedAt,
+                viewCount: details.statistics ? parseInt(details.statistics.viewCount) : 0,
+                duration: details.contentDetails ? formatDuration(details.contentDetails.duration) : '0:00',
+                url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
+                embedUrl: `https://www.youtube.com/embed/${item.id.videoId}?autoplay=1&rel=0`
+            };
+        });
+    } catch (error) {
+        console.error('Error enhancing video data:', error);
+        // Return basic data if enhancement fails
+        return videoItems.map(item => ({
+            id: item.id.videoId,
+            title: item.snippet.title,
+            description: item.snippet.description,
+            thumbnail: item.snippet.thumbnails.medium.url,
+            publishedAt: item.snippet.publishedAt,
+            viewCount: 0,
+            duration: '0:00',
+            url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
+            embedUrl: `https://www.youtube.com/embed/${item.id.videoId}?autoplay=1&rel=0`
+        }));
+    }
+}
+
+function formatDuration(duration) {
+    // Convert ISO 8601 duration (PT4M13S) to readable format (4:13)
+    const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+    if (!match) return '0:00';
+    
+    const hours = parseInt(match[1] || 0);
+    const minutes = parseInt(match[2] || 0);
+    const seconds = parseInt(match[3] || 0);
+    
+    if (hours > 0) {
+        return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    } else {
+        return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    }
+}
+
+function formatViewCount(count) {
+    if (count >= 1000000) {
+        return (count / 1000000).toFixed(1) + 'M';
+    } else if (count >= 1000) {
+        return (count / 1000).toFixed(1) + 'K';
+    }
+    return count.toString();
+}
+
+function renderVideoSlider() {
+    const sliderTrack = document.getElementById('sliderTrack');
+    const loadingElement = document.getElementById('videoLoading');
+    const sliderElement = document.getElementById('videoSlider');
+    const indicatorsElement = document.getElementById('sliderIndicators');
+
+    if (!sliderTrack || !loadingElement || !sliderElement) return;
+
+    // Hide loading, show slider
+    loadingElement.style.display = 'none';
+    sliderElement.style.display = 'flex';
+
+    // Clear existing content
+    sliderTrack.innerHTML = '';
+    indicatorsElement.innerHTML = '';
+
+    totalVideos = videos.length;
+    const totalSlides = Math.ceil(totalVideos / videosPerView);
+
+    // Create video cards
+    videos.forEach((video, index) => {
+        const videoCard = createVideoCard(video, index);
+        sliderTrack.appendChild(videoCard);
+    });
+
+    // Create indicators
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = `indicator-dot ${i === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => goToSlide(i));
+        indicatorsElement.appendChild(dot);
+    }
+
+    // Initialize slider controls
+    initSliderControls();
+    
+    // Set initial position
+    updateSliderPosition();
+}
+
+function createVideoCard(video, index) {
+    const card = document.createElement('div');
+    card.className = 'video-card';
+    card.setAttribute('data-video-id', video.id);
+    card.setAttribute('data-video-index', index);
+
+    card.innerHTML = `
+        <div class="video-thumbnail">
+            <img src="${video.thumbnail}" alt="${video.title}" loading="lazy">
+            <div class="video-play-overlay">
+                <i class="fas fa-play"></i>
+            </div>
+            <div class="video-duration">${video.duration}</div>
+        </div>
+        <div class="video-info">
+            <h3 class="video-title">${video.title}</h3>
+            <div class="video-meta">
+                <div class="video-views">
+                    <i class="fas fa-eye"></i>
+                    <span>${formatViewCount(video.viewCount)}</span>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Add click event to open modal
+    card.addEventListener('click', () => openVideoModal(video));
+
+    return card;
+}
+
+function initSliderControls() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => previousSlide());
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => nextSlide());
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            previousSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        }
+    });
+}
+
+function nextSlide() {
+    const totalSlides = Math.ceil(totalVideos / videosPerView);
+    if (currentVideoIndex < totalSlides - 1) {
+        currentVideoIndex++;
+        updateSliderPosition();
+    }
+}
+
+function previousSlide() {
+    if (currentVideoIndex > 0) {
+        currentVideoIndex--;
+        updateSliderPosition();
+    }
+}
+
+function goToSlide(slideIndex) {
+    currentVideoIndex = slideIndex;
+    updateSliderPosition();
+}
+
+function updateSliderPosition() {
+    const sliderTrack = document.getElementById('sliderTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicators = document.querySelectorAll('.indicator-dot');
+
+    if (!sliderTrack) return;
+
+    // Calculate transform
+    const translateX = -(currentVideoIndex * videosPerView * (280 + 24)); // 280px card width + 24px gap
+    sliderTrack.style.transform = `translateX(${translateX}px)`;
+
+    // Update button states
+    const totalSlides = Math.ceil(totalVideos / videosPerView);
+    if (prevBtn) prevBtn.disabled = currentVideoIndex === 0;
+    if (nextBtn) nextBtn.disabled = currentVideoIndex >= totalSlides - 1;
+
+    // Update indicators
+    indicators.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentVideoIndex);
+    });
+}
+
+function openVideoModal(video) {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalClose = document.getElementById('modalClose');
+    const modalOverlay = document.getElementById('modalOverlay');
+
+    if (!modal || !modalVideo) return;
+
+    // Set video source
+    modalVideo.src = video.embedUrl;
+
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Close modal events
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalVideo.src = '';
+        document.body.style.overflow = '';
+    };
+
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', closeModal);
+    }
+
+    // Close on escape key
+    const handleEscape = (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+            document.removeEventListener('keydown', handleEscape);
+        }
+    };
+    document.addEventListener('keydown', handleEscape);
+}
+
+function showLoadingState() {
+    const loadingElement = document.getElementById('videoLoading');
+    const sliderElement = document.getElementById('videoSlider');
+    const errorElement = document.getElementById('videoError');
+
+    if (loadingElement) loadingElement.style.display = 'flex';
+    if (sliderElement) sliderElement.style.display = 'none';
+    if (errorElement) errorElement.style.display = 'none';
+}
+
+function showErrorState() {
+    const loadingElement = document.getElementById('videoLoading');
+    const sliderElement = document.getElementById('videoSlider');
+    const errorElement = document.getElementById('videoError');
+
+    if (loadingElement) loadingElement.style.display = 'none';
+    if (sliderElement) sliderElement.style.display = 'none';
+    if (errorElement) errorElement.style.display = 'flex';
+}
+
+function cacheVideos(videos) {
+    const cacheData = {
+        videos: videos,
+        timestamp: Date.now()
+    };
+    localStorage.setItem(YOUTUBE_CONFIG.cacheKey, JSON.stringify(cacheData));
+}
+
+function getCachedVideos() {
+    try {
+        const cached = localStorage.getItem(YOUTUBE_CONFIG.cacheKey);
+        if (!cached) return null;
+
+        const cacheData = JSON.parse(cached);
+        const now = Date.now();
+
+        // Check if cache is still valid
+        if (now - cacheData.timestamp > YOUTUBE_CONFIG.cacheExpiry) {
+            localStorage.removeItem(YOUTUBE_CONFIG.cacheKey);
+            return null;
+        }
+
+        return cacheData.videos;
+    } catch (error) {
+        console.error('Error reading cached videos:', error);
+        return null;
+    }
+}
+
+// ===================================
 // Export for use in other scripts
 // ===================================
 window.JEDH = {
     switchLanguage,
-    handleBookingForm
+    handleBookingForm,
+    openVideoModal
 };

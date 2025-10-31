@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Alignment Test - JEDH</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: #f8f9fa;
+        }
+        .test-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .test-section h2 {
+            color: #0066cc;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 0.5rem;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .test-description {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: #0066cc; margin-bottom: 2rem;">Button Alignment Test Page</h1>
+    
+    <!-- Test 1: Procedure Cards -->
+    <div class="test-section">
+        <h2>Test 1: Procedure Cards (NRI Regional Cards)</h2>
+        <div class="test-description">
+            These cards should have buttons aligned at the bottom regardless of content length.
+        </div>
+        <div class="procedure-cards">
+            <div class="procedure-card">
+                <div class="card-header">
+                    <h3>USA</h3>
+                    <div class="price-tag">$2,500</div>
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-plane"></i>
+                        <span>Direct flights from major US cities</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Cost comparison with US healthcare</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Insurance guidance and support</span>
+                    </div>
+                </div>
+                <p>Travel tips, insurance guidance, cost comparison with US healthcare, and popular procedures for American patients.</p>
+                <a href="#" class="btn btn-primary">View USA Page <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="procedure-card">
+                <div class="card-header">
+                    <h3>UK</h3>
+                    <div class="price-tag">£1,800</div>
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-plane"></i>
+                        <span>Direct flights from London</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>NHS vs private India comparison</span>
+                    </div>
+                </div>
+                <p>NHS vs private India comparison, visa information, travel from UK, and testimonials from British patients.</p>
+                <a href="#" class="btn btn-primary">View UK Page <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="procedure-card">
+                <div class="card-header">
+                    <h3>Middle East</h3>
+                    <div class="price-tag">AED 8,500</div>
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-plane"></i>
+                        <span>Direct flights from Dubai/Abu Dhabi</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Quick turnaround packages</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-language"></i>
+                        <span>Arabic-speaking staff</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Regional logistics support</span>
+                    </div>
+                </div>
+                <p>Quick turnaround packages, direct flights from Dubai/Abu Dhabi, Arabic-speaking staff, and regional logistics.</p>
+                <a href="#" class="btn btn-primary">View Middle East Page <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test 2: Pricing Cards -->
+    <div class="test-section">
+        <h2>Test 2: Pricing Cards (Homepage Transparent Pricing)</h2>
+        <div class="test-description">
+            These cards should have buttons aligned at the bottom with consistent spacing.
+        </div>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Cataract Surgery</h3>
+                <div class="pricing-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Advanced IOL technology</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Quick recovery time</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>LASIK/PRK</h3>
+                <div class="pricing-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Blade-free technology</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Custom wavefront</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Lifetime warranty</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Dental Implants</h3>
+                <div class="pricing-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Premium materials</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test 3: Service Cards -->
+    <div class="test-section">
+        <h2>Test 3: Service Cards</h2>
+        <div class="test-description">
+            These cards should maintain button alignment with varying content lengths.
+        </div>
+        <div class="test-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Comprehensive Eye Care</h3>
+                <div class="service-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Advanced diagnostics</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Laser treatments</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <h3>Complete Dental Solutions</h3>
+                <div class="service-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Cosmetic dentistry</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Implants and prosthetics</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Orthodontic treatments</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check"></i>
+                        <span>Preventive care</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test 4: Feature Items -->
+    <div class="test-section">
+        <h2>Test 4: Feature Items</h2>
+        <div class="test-description">
+            These feature cards should have consistent button alignment.
+        </div>
+        <div class="test-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Quality Assurance</h3>
+                <p>Short description.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Expert Team</h3>
+                <p>This is a longer description that should push the button to the bottom of the card, ensuring proper alignment with other cards that have shorter content.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #e8f5e8; border-radius: 12px;">
+        <h3 style="color: #2e7d32; margin-bottom: 1rem;">✅ Button Alignment Test Complete</h3>
+        <p style="color: #388e3c; margin-bottom: 1rem;">
+            All buttons should be aligned at the bottom of their respective cards, regardless of content length.
+        </p>
+        <p style="color: #666; font-size: 0.9rem;">
+            If buttons are properly aligned, the CSS fixes have been successfully applied across all card types.
+        </p>
+    </div>
+</body>
+</html>
+

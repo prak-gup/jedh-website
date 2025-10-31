@@ -57,7 +57,7 @@
                         <li><i class="fas fa-phone"></i> <?php echo jedh_get_option('phone', '+91 9602227267'); ?></li>
                         <li><i class="fas fa-envelope"></i> <?php echo jedh_get_option('email', 'dramit.eye@gmail.com'); ?></li>
                         <li><i class="fas fa-map-marker-alt"></i> <?php echo jedh_get_option('address', 'Jaipur, Rajasthan'); ?></li>
-                        <li><i class="fas fa-clock"></i> <?php echo jedh_get_option('working_hours', 'Mon-Sat: 9 AM - 7 PM'); ?></li>
+                        <li><i class="fas fa-clock"></i> <?php echo jedh_get_option('working_hours', 'Mon-Sat: 10 AM - 7 PM'); ?></li>
                     </ul>
                 </div>
             </div>
