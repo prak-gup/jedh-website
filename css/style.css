@@ -711,6 +711,18 @@ img {
     align-items: stretch;
 }
 
+/* Center features grid on pricing page when there are only 2 items */
+.pricing-page .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+    justify-items: stretch;
+}
+
+.pricing-page .features-grid .feature-item {
+    max-width: 100%;
+}
+
 .feature-item {
     background: white;
     padding: var(--spacing-lg);
