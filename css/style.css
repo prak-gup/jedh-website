@@ -1769,6 +1769,21 @@ img {
     gap: var(--spacing-xl);
 }
 
+/* Center-aligned CTA for pricing page */
+.pricing-page .cta-banner .cta-content {
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pricing-page .cta-banner .cta-text {
+    text-align: center;
+}
+
+.pricing-page .cta-banner .cta-buttons {
+    justify-content: center;
+}
+
 .cta-text h2 {
     color: #FFFFFF;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
