@@ -10,7 +10,12 @@
     <meta property="og:description" content="4.8★ rating from 10,000+ satisfied patients. Read real stories from our patients">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jaipureyedental.com/reviews">
-    <meta property="og:image" content="assets/images/JEDH Logo.png">
+    <meta property="og:image" content="https://jaipureyedental.com/assets/images/JEDH Logo.png">
+    <meta property="og:image:alt" content="JEDH Patient Reviews & Testimonials">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Patient Reviews & Testimonials | Jaipur Eye & Dental Hospital">
+    <meta name="twitter:description" content="4.8★ rating from 10,000+ satisfied patients. Read real stories from our patients">
+    <meta name="twitter:image" content="https://jaipureyedental.com/assets/images/JEDH Logo.png">
 
     <title>Patient Reviews & Testimonials | JEDH - Jaipur Eye & Dental Hospital</title>
 
@@ -180,6 +185,16 @@
 
         .review-card.hidden {
             display: none;
+        }
+
+        /* Hide static review cards - they will be replaced by API data */
+        #reviewsGrid > .review-card:not([data-dynamic="true"]) {
+            display: none !important;
+        }
+        
+        /* Show only dynamically loaded reviews */
+        #reviewsGrid > .review-card[data-dynamic="true"] {
+            display: block !important;
         }
 
         .review-header {
@@ -554,9 +569,15 @@
     <!-- Reviews Grid -->
     <section class="reviews-section">
         <div class="container">
-            <div class="reviews-grid">
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Reviews will be dynamically loaded from Google Places API -->
+                <div class="review-card" style="text-align: center; padding: 3rem;">
+                    <div class="loading-spinner" style="margin: 0 auto 1rem;"></div>
+                    <p>Loading reviews from Google...</p>
+                </div>
+                <!-- Fallback static reviews (hidden - will be replaced by API data) -->
                 <!-- Review 1 -->
-                <div class="review-card" data-service="eye-care" data-rating="5">
+                <div class="review-card" data-service="eye-care" data-rating="5" style="display: none !important;">
                     <div class="review-header">
                         <div class="review-author">
                             <h4>Mrs. Rekha Sharma</h4>
@@ -845,7 +866,7 @@
             </div>
 
             <div class="text-center" style="margin-top: 3rem;">
-                <p style="color: var(--text-medium); font-size: 1.1rem;">Showing 12 of 10,000+ reviews</p>
+                <p style="color: var(--text-medium); font-size: 1.1rem;">Loading review count...</p>
             </div>
         </div>
     </section>
@@ -896,7 +917,7 @@
                 <div class="google-icon">
                     <i class="fab fa-google"></i>
                 </div>
-                <div class="google-rating-text">Rated 4.8 on Google</div>
+                <div class="google-rating-text">Loading rating...</div>
                 <div class="google-stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -904,9 +925,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <p style="color: var(--text-medium); margin-top: 1rem;">Based on hundreds of Google reviews</p>
+                <p style="color: var(--text-medium); margin-top: 1rem;">Loading review count...</p>
                 <div class="google-link">
-                    <a href="#" class="btn btn-outline" target="_blank">
+                    <a href="https://www.google.com/maps/place/Jaipur+Eye+%26+Dental+Hospital/@26.8219993,75.8449593,17z/data=!4m15!1m8!3m7!1s0x396db252ab27ff43:0x21e41825cdcdf27e!2sJaipur+Eye+%26+Dental+Hospital!8m2!3d26.8219945!4d75.8475342!10e1!16s%2Fg%2F11f2b0wpph!3m5!1s0x396db252ab27ff43:0x21e41825cdcdf27e!8m2!3d26.8219945!4d75.8475342!16s%2Fg%2F11f2b0wpph?entry=ttu" class="btn btn-outline" target="_blank">
                         <i class="fab fa-google"></i> View Google Reviews
                     </a>
                 </div>
@@ -1025,42 +1046,62 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+    <script src="js/reviews.js"></script>
     <script>
-        // Filter functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const reviewCards = document.querySelectorAll('.review-card');
+        // Filter functionality - updated to work with dynamic reviews
+        function initFilterButtons() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
+                    const filterValue = button.getAttribute('data-filter');
+                    const reviewCards = document.querySelectorAll('.review-card');
 
-                const filterValue = button.getAttribute('data-filter');
+                    reviewCards.forEach(card => {
+                        const service = card.getAttribute('data-service');
+                        const rating = card.getAttribute('data-rating');
 
-                reviewCards.forEach(card => {
-                    const service = card.getAttribute('data-service');
-                    const rating = card.getAttribute('data-rating');
-
-                    if (filterValue === 'all') {
-                        card.classList.remove('hidden');
-                    } else if (filterValue === '5-star') {
-                        if (rating === '5') {
+                        if (filterValue === 'all') {
                             card.classList.remove('hidden');
+                        } else if (filterValue === '5-star') {
+                            if (rating === '5') {
+                                card.classList.remove('hidden');
+                            } else {
+                                card.classList.add('hidden');
+                            }
                         } else {
-                            card.classList.add('hidden');
+                            if (service === filterValue) {
+                                card.classList.remove('hidden');
+                            } else {
+                                card.classList.add('hidden');
+                            }
                         }
-                    } else {
-                        if (service === filterValue) {
-                            card.classList.remove('hidden');
-                        } else {
-                            card.classList.add('hidden');
-                        }
-                    }
+                    });
                 });
             });
-        });
+        }
+
+        // Initialize filters when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initFilterButtons);
+        } else {
+            initFilterButtons();
+        }
+
+        // Re-initialize filters after reviews are loaded (with a small delay)
+        const originalInitGoogleReviews = window.initGoogleReviews;
+        if (originalInitGoogleReviews) {
+            window.initGoogleReviews = async function() {
+                await originalInitGoogleReviews();
+                // Re-initialize filters after reviews are loaded
+                setTimeout(initFilterButtons, 100);
+            };
+        }
     </script>
 </body>
 </html>

@@ -8,7 +8,7 @@
                     <?php else : ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/JEDH Logo.png" alt="<?php bloginfo('name'); ?>" class="footer-logo">
                     <?php endif; ?>
-                    <p data-en="Trusted eye and dental care in Jaipur since 2008. Doctor-led, patient-focused healthcare." data-hi="2008 से जयपुर में विश्वसनीय नेत्र और दंत चिकित्सा देखभाल। डॉक्टर के नेतृत्व में, रोगी-केंद्रित स्वास्थ्य सेवा।">
+                    <p data-en="Trusted eye and dental care in Jaipur since 2017. Doctor-led, patient-focused healthcare." data-hi="2017 से जयपुर में विश्वसनीय नेत्र और दंत चिकित्सा देखभाल। डॉक्टर के नेतृत्व में, रोगी-केंद्रित स्वास्थ्य सेवा।">
                         <?php echo get_bloginfo('description'); ?>
                     </p>
                     <div class="social-links">
@@ -44,7 +44,6 @@
                     <ul>
                         <li><a href="<?php echo home_url('/doctors/'); ?>">Our Doctors</a></li>
                         <li><a href="<?php echo home_url('/pricing/'); ?>">Pricing</a></li>
-                        <li><a href="<?php echo home_url('/reviews/'); ?>">Reviews</a></li>
                         <li><a href="<?php echo home_url('/nri/'); ?>">For NRIs</a></li>
                         <li><a href="<?php echo home_url('/blog/'); ?>">Blog</a></li>
                         <li><a href="<?php echo home_url('/contact/'); ?>">Contact</a></li>

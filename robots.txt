@@ -1,0 +1,24 @@
+# robots.txt for Jaipur Eye & Dental Hospital
+# https://jaipureyedental.com
+
+User-agent: *
+Allow: /
+
+# Block test files
+Disallow: /test-button-alignment.html
+
+# Block WordPress theme directory (if not in use)
+Disallow: /jedh-theme/
+
+# Allow important assets
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /Images/
+
+# Sitemap location
+Sitemap: https://jaipureyedental.com/sitemap.xml
+
+# Crawl-delay (optional - adjust if needed)
+# Crawl-delay: 1
+

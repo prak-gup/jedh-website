@@ -642,7 +642,7 @@ function jedh_add_schema_markup() {
           "@type": ["MedicalBusiness", "LocalBusiness"],
           "name": "Jaipur Eye & Dental Hospital",
           "alternateName": "JEDH",
-          "description": "Comprehensive eye and dental care in Jaipur since 2008",
+          "description": "Comprehensive eye and dental care in Jaipur since 2017",
           "url": "<?php echo home_url(); ?>",
           "telephone": "<?php echo jedh_get_option('phone'); ?>",
           "email": "<?php echo jedh_get_option('email'); ?>",

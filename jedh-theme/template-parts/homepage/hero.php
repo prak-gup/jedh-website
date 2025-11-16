@@ -11,7 +11,7 @@
     <div class="container">
         <div class="hero-content">
             <div class="hero-text">
-                <span class="hero-badge" data-en="Since 2008 | 10,000+ Patients Treated" data-hi="2008 से | 10,000+ रोगियों का इलाज">Since 2008 | 10,000+ Patients Treated</span>
+                <span class="hero-badge" data-en="Since 2017 | 10,000+ Patients Treated" data-hi="2017 से | 10,000+ रोगियों का इलाज">Since 2017 | 10,000+ Patients Treated</span>
                 <h1 class="hero-title" data-en="Trusted Eye and Dental Care in Jaipur" data-hi="जयपुर में विश्वसनीय नेत्र और दंत चिकित्सा">Trusted Eye and Dental Care in Jaipur</h1>
                 <p class="hero-subtitle" data-en="Doctor-led. Bilingual support. Modern equipment. Transparent pricing." data-hi="डॉक्टर के नेतृत्व में। द्विभाषी सहायता। आधुनिक उपकरण। पारदर्शी मूल्य निर्धारण।">Doctor-led. Bilingual support. Modern equipment. Transparent pricing.</p>
 
@@ -27,7 +27,7 @@
                     </div>
                     <div class="badge-item">
                         <i class="fas fa-award"></i>
-                        <span>17+ Years</span>
+                        <span>7+ Years</span>
                     </div>
                 </div>
 
@@ -43,16 +43,18 @@
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/HOSPITAL PHOTO/HOSPITAL PHOTO_Jaipur Eye and Dental Reception.jpg" alt="JEDH Hospital" class="hero-img">
-                <!-- Floating Cards -->
-                <div class="floating-card card-1">
+            <div class="hero-visual">
+                <div class="hero-icon-card">
                     <i class="fas fa-eye"></i>
                     <span>Advanced Eye Care</span>
                 </div>
-                <div class="floating-card card-2">
+                <div class="hero-icon-card">
                     <i class="fas fa-tooth"></i>
                     <span>Modern Dentistry</span>
+                </div>
+                <div class="hero-icon-card">
+                    <i class="fas fa-user-md"></i>
+                    <span>Expert Doctors</span>
                 </div>
             </div>
         </div>

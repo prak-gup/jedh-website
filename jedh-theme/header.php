@@ -103,7 +103,6 @@
         echo '</li>';
         echo '<li><a href="' . home_url('/doctors/') . '">Our Doctors</a></li>';
         echo '<li><a href="' . home_url('/pricing/') . '">Pricing</a></li>';
-        echo '<li><a href="' . home_url('/reviews/') . '">Reviews</a></li>';
         echo '<li><a href="' . home_url('/contact/') . '">Contact</a></li>';
         echo '</ul>';
     }
