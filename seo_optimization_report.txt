@@ -1,0 +1,263 @@
+================================================================================
+SEO ANALYSIS REPORT
+================================================================================
+Generated: 2025-12-04 22:01:19
+Files analyzed: 21
+Files with issues: 0
+Total critical issues: 0
+Total warnings: 56
+
+⚠️  WARNINGS (Fix Soon for Optimal SEO)
+--------------------------------------------------------------------------------
+
+blog/index.html:
+  • Jump from H1 to H3 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+contact.html:
+  • Jump from H1 to H3 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+dental/cosmetic.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+dental/implants.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+dental/index.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+dental/invisalign.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+dental/preventive.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+doctors.html:
+  • Jump from H1 to H3 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+eye/cataract-surgery.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+eye/glaucoma.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+eye/index.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+eye/lasik-prk.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+eye/pediatric-myopia.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+index.html:
+  • Jump from H2 to H4 (should be sequential)
+
+nri/index.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+nri/middle-east.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+nri/uk.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+nri/usa.html:
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+pricing.html:
+  • Jump from H2 to H4 (should be sequential)
+
+reviews.html:
+  • Jump from H1 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+  • Jump from H2 to H4 (should be sequential)
+
+test-button-alignment.html:
+  • Title too short (28 chars, recommended: 50-60)
+  • Meta description too short (74 chars, recommended: 150-160)
+  • Missing schema.org structured data
+  • Low content length (288 words, recommended: 300+)
+
+✅ GOOD PRACTICES (Already Optimized)
+--------------------------------------------------------------------------------
+
+blog/index.html:
+  ✓ Title tag optimized (38 chars)
+  ✓ Meta description optimized (125 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+contact.html:
+  ✓ Title tag optimized (48 chars)
+  ✓ Meta description optimized (138 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+dental/cosmetic.html:
+  ✓ Title tag optimized (52 chars)
+  ✓ Meta description optimized (146 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+dental/implants.html:
+  ✓ Title tag optimized (49 chars)
+  ✓ Meta description optimized (160 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+dental/index.html:
+  ✓ Title tag optimized (55 chars)
+  ✓ Meta description optimized (146 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+dental/invisalign.html:
+  ✓ Title tag optimized (57 chars)
+  ✓ Meta description optimized (154 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+dental/preventive.html:
+  ✓ Title tag optimized (58 chars)
+  ✓ Meta description optimized (155 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+doctors.html:
+  ✓ Title tag optimized (56 chars)
+  ✓ Meta description optimized (124 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+eye/cataract-surgery.html:
+  ✓ Title tag optimized (51 chars)
+  ✓ Meta description optimized (146 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+eye/glaucoma.html:
+  ✓ Title tag optimized (57 chars)
+  ✓ Meta description optimized (148 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+eye/index.html:
+  ✓ Title tag optimized (60 chars)
+  ✓ Meta description optimized (157 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+eye/lasik-prk.html:
+  ✓ Title tag optimized (48 chars)
+  ✓ Meta description optimized (138 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+eye/pediatric-myopia.html:
+  ✓ Title tag optimized (52 chars)
+  ✓ Meta description optimized (141 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+index.html:
+  ✓ Title tag optimized (56 chars)
+  ✓ Meta description optimized (155 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+nri/index.html:
+  ✓ Title tag optimized (42 chars)
+  ✓ Meta description optimized (143 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+nri/middle-east.html:
+  ✓ Title tag optimized (41 chars)
+  ✓ Meta description optimized (148 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+nri/uk.html:
+  ✓ Title tag optimized (50 chars)
+  ✓ Meta description optimized (159 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+nri/usa.html:
+  ✓ Title tag optimized (60 chars)
+  ✓ Meta description optimized (151 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+pricing.html:
+  ✓ Title tag optimized (55 chars)
+  ✓ Meta description optimized (140 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+reviews.html:
+  ✓ Title tag optimized (44 chars)
+  ✓ Meta description optimized (156 chars)
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+
+test-button-alignment.html:
+  ✓ HTML lang attribute present: en
+  ✓ Charset declaration present
+  ✓ Viewport meta tag present
+  ✓ Single H1 tag present
+  ✓ Proper heading hierarchy
+
+================================================================================
+END OF REPORT
+================================================================================
