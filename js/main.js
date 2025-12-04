@@ -27,41 +27,43 @@ function initMobileMenu() {
     if (toggle && menu) {
         toggle.addEventListener('click', function(e) {
             e.stopPropagation();
+            e.preventDefault();
+            const isActive = menu.classList.contains('active');
+            
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
+            body.classList.toggle('menu-open');
 
             // Prevent body scroll when menu is open
-            if (menu.classList.contains('active')) {
+            if (!isActive) {
                 body.style.overflow = 'hidden';
+                body.style.position = 'fixed';
+                body.style.width = '100%';
             } else {
                 body.style.overflow = '';
+                body.style.position = '';
+                body.style.width = '';
             }
 
-            // Animate hamburger
-            const spans = toggle.querySelectorAll('span');
-            if (toggle.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translateY(8px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
+            // Hamburger animation is now handled by CSS
         });
 
-        // Close menu when clicking on menu links
+        // Close menu when clicking on menu links (but not dropdown toggles)
         const menuLinks = menu.querySelectorAll('a');
         menuLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function(e) {
+                // Don't close if it's a dropdown toggle
+                if (this.parentElement.classList.contains('dropdown') && this.nextElementSibling) {
+                    return; // Let dropdown handler manage this
+                }
+                
+                // Close menu for regular links
                 menu.classList.remove('active');
                 toggle.classList.remove('active');
+                body.classList.remove('menu-open');
                 body.style.overflow = '';
-                
-                const spans = toggle.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+                body.style.position = '';
+                body.style.width = '';
             });
         });
 
@@ -70,12 +72,10 @@ function initMobileMenu() {
             if (!toggle.contains(e.target) && !menu.contains(e.target)) {
                 menu.classList.remove('active');
                 toggle.classList.remove('active');
+                body.classList.remove('menu-open');
                 body.style.overflow = '';
-                
-                const spans = toggle.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+                body.style.position = '';
+                body.style.width = '';
             }
         });
 
@@ -84,12 +84,10 @@ function initMobileMenu() {
             if (e.key === 'Escape' && menu.classList.contains('active')) {
                 menu.classList.remove('active');
                 toggle.classList.remove('active');
+                body.classList.remove('menu-open');
                 body.style.overflow = '';
-                
-                const spans = toggle.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+                body.style.position = '';
+                body.style.width = '';
             }
         });
 
@@ -101,21 +99,32 @@ function initMobileMenu() {
             
             if (dropdownToggle && dropdownMenu) {
                 dropdownToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    // Close other dropdowns
-                    dropdowns.forEach(otherDropdown => {
-                        if (otherDropdown !== dropdown) {
-                            otherDropdown.classList.remove('active');
-                        }
-                    });
-                    
-                    // Toggle current dropdown
-                    dropdown.classList.toggle('active');
+                    // Only prevent default on mobile
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // Close other dropdowns
+                        dropdowns.forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle current dropdown
+                        dropdown.classList.toggle('active');
+                    }
                 });
             }
         });
+        
+        // Improve touch handling for mobile menu
+        if (window.innerWidth <= 768) {
+            // Add touch event listeners for better mobile interaction
+            menu.addEventListener('touchstart', function(e) {
+                // Improve touch response
+            }, { passive: true });
+        }
     }
 }
 
