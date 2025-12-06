@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MXQX23SCV"></script>
+    <!-- Google tag (gtag.js) - Deferred -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-2MXQX23SCV');
     </script>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-2MXQX23SCV"></script>
     
     <meta name="description" content="Read authentic patient reviews and testimonials for JEDH - 4.8★ rating from 10,000+ satisfied patients in Jaipur. Real stories from eye and dental patients.">
     <meta name="keywords" content="JEDH reviews, eye hospital reviews Jaipur, dental clinic reviews Jaipur, patient testimonials">
@@ -30,12 +30,56 @@
     <title>Patient Reviews & Testimonials | JEDH Jaipur</title>
 
     <link rel="canonical" href="https://jaipureyedental.com/reviews">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pages.css">
+    
+    <!-- Resource Hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Critical CSS Inline -->
+    <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary-color:#0066CC;--primary-dark:#004C99;--secondary-color:#00A86B;--text-dark:#1A1A1A;--text-medium:#4A4A4A;--bg-white:#FFFFFF;--bg-light:#F8F9FA;--border-color:#E0E0E0;--spacing-xs:0.5rem;--spacing-sm:1rem;--spacing-md:1.5rem;--spacing-lg:2rem;--spacing-xl:3rem;--spacing-2xl:4rem;--radius-sm:4px;--radius-md:8px;--radius-lg:12px;--radius-full:9999px;--shadow-sm:0 2px 4px rgba(0,0,0,0.05);--font-primary:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--font-heading:'Poppins',sans-serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-primary);font-size:16px;line-height:1.6;color:var(--text-dark);background:var(--bg-white);overflow-x:hidden}
+    .container{max-width:1200px;margin:0 auto;padding:0 var(--spacing-md)}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:600;line-height:1.2;margin-bottom:var(--spacing-sm)}
+    h1{font-size:clamp(2rem,5vw,3.5rem)}
+    h2{font-size:clamp(1.75rem,4vw,2.5rem)}
+    img{max-width:100%;height:auto;display:block}
+    .top-bar{background:var(--text-dark);color:#fff;padding:var(--spacing-xs) 0;font-size:0.875rem}
+    .top-bar-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--spacing-sm)}
+    .navbar{background:#fff;box-shadow:var(--shadow-sm);position:sticky;top:0;z-index:1000}
+    .nav-wrapper{display:flex;align-items:center;justify-content:space-between;padding:var(--spacing-sm) 0}
+    .logo-img{height:60px;width:auto}
+    .mobile-menu-toggle{display:none;flex-direction:column;gap:5px;background:transparent;border:none;cursor:pointer;padding:0.75rem;min-width:44px;min-height:44px;justify-content:center;align-items:center;z-index:1001;position:relative}
+    .page-header{background:linear-gradient(135deg,var(--primary-color) 0%,var(--primary-dark) 100%);color:#fff;padding:6rem 0 4rem;text-align:center;margin-top:60px}
+    .page-header h1{color:#fff;margin-bottom:1rem}
+    .btn{display:inline-flex;align-items:center;gap:var(--spacing-xs);padding:0.75rem 1.5rem;font-size:1rem;font-weight:500;border-radius:var(--radius-md);border:none;cursor:pointer;transition:all 0.3s ease;text-align:center;white-space:nowrap;text-decoration:none}
+    .btn-primary{background:var(--primary-color);color:#fff}
+    .btn-lg{padding:1rem 2rem;font-size:1.125rem}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+    @media(max-width:768px){.mobile-menu-toggle{display:flex}}
+    </style>
+    
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="preload" href="css/pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/pages.css"></noscript>
+    
+    <!-- Load fonts asynchronously -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Defer Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
     <!-- Schema Markup -->
     <script type="application/ld+json">
@@ -501,7 +545,7 @@
             <div class="nav-wrapper">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="assets/images/JEDH Logo.png" alt="JEDH Logo" class="logo-img">
+                        <img src="assets/images/JEDH Logo.png" alt="JEDH Logo" class="logo-img" width="200" height="60" fetchpriority="high" loading="eager">
                     </a>
                 </div>
                 <ul class="nav-menu">
@@ -530,11 +574,11 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
                 <div class="nav-cta">
-                    <a href="https://wa.me/919602227267" class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i> Book on WhatsApp
+                    <a href="https://wa.me/919602227267" class="btn btn-primary" aria-label="Book appointment on WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Book on WhatsApp
                     </a>
                 </div>
-                <button class="mobile-menu-toggle">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -623,6 +667,7 @@
     <!-- Reviews Grid -->
     <section class="reviews-section">
         <div class="container">
+            <h2 class="sr-only">Patient Reviews</h2>
             <div class="reviews-grid" id="reviewsGrid">
                 <!-- Reviews will be dynamically loaded from Google Places API -->
                 <div class="review-card" style="text-align: center; padding: 3rem;">
@@ -934,21 +979,21 @@
             </div>
 
             <div class="video-grid">
-                <div class="video-placeholder">
-                    <i class="fab fa-youtube"></i>
-                    <h4>Cataract Surgery Success Stories</h4>
-                    <p>Coming Soon</p>
-                </div>
-                <div class="video-placeholder">
-                    <i class="fab fa-youtube"></i>
-                    <h4>Dental Implant Transformations</h4>
-                    <p>Coming Soon</p>
-                </div>
-                <div class="video-placeholder">
-                    <i class="fab fa-youtube"></i>
-                    <h4>LASIK Patient Experiences</h4>
-                    <p>Coming Soon</p>
-                </div>
+                    <div class="video-placeholder">
+                        <i class="fab fa-youtube"></i>
+                        <h3>Cataract Surgery Success Stories</h3>
+                        <p>Coming Soon</p>
+                    </div>
+                    <div class="video-placeholder">
+                        <i class="fab fa-youtube"></i>
+                        <h3>Dental Implant Transformations</h3>
+                        <p>Coming Soon</p>
+                    </div>
+                    <div class="video-placeholder">
+                        <i class="fab fa-youtube"></i>
+                        <h3>LASIK Patient Experiences</h3>
+                        <p>Coming Soon</p>
+                    </div>
             </div>
 
             <div class="text-center" style="margin-top: 2rem;">
@@ -1029,13 +1074,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <img src="assets/images/JEDH Logo.png" alt="JEDH Logo" class="footer-logo">
+                    <img src="assets/images/JEDH Logo.png" alt="JEDH Logo" class="footer-logo" width="200" height="60" loading="lazy">
                     <p data-en="Trusted eye and dental care in Jaipur since 2017. Doctor-led, patient-focused healthcare." data-hi="2017 से जयपुर में विश्वसनीय नेत्र और दंत चिकित्सा देखभाल। डॉक्टर के नेतृत्व में, रोगी-केंद्रित स्वास्थ्य सेवा।">Trusted eye and dental care in Jaipur since 2017. Doctor-led, patient-focused healthcare.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/jaipureyedentalhospital" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@jedh" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.linkedin.com/in/dr-amit-gupta-1938985b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/919602227267" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/jaipureyedentalhospital" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/@jedh" target="_blank" aria-label="Visit our YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/dr-amit-gupta-1938985b/" target="_blank" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/919602227267" target="_blank" aria-label="Message us on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
@@ -1094,13 +1139,13 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919602227267" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/919602227267" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/reviews.js"></script>
+    <!-- Scripts - Deferred for better performance -->
+    <script src="js/main.js" defer></script>
+    <script src="js/reviews.js" defer></script>
     <script>
         // Filter functionality - updated to work with dynamic reviews
         function initFilterButtons() {

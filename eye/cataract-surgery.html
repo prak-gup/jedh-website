@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MXQX23SCV"></script>
+    <!-- Google tag (gtag.js) - Deferred -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-2MXQX23SCV');
     </script>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-2MXQX23SCV"></script>
     
     <meta name="description" content="Advanced cataract surgery in Jaipur. Phaco & Femto lasik. Premium lenses available. Painless procedure. ₹18,000-₹1.25 lakh. Book evaluation today.">
     <meta name="keywords" content="cataract surgery Jaipur, best cataract surgeon Jaipur, cataract operation cost Jaipur, phaco surgery Jaipur">
@@ -28,10 +28,55 @@
     <meta name="twitter:image" content="https://jaipureyedental.com/assets/images/JEDH Logo.png">
     <title>Cataract Surgery Jaipur | Phaco & Femto | From ₹18k</title>
     <link rel="canonical" href="https://jaipureyedental.com/eye/cataract-surgery">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Resource Hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical CSS Inline -->
+    <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary-color:#0066CC;--primary-dark:#004C99;--secondary-color:#00A86B;--text-dark:#1A1A1A;--text-medium:#4A4A4A;--bg-white:#FFFFFF;--bg-light:#F8F9FA;--border-color:#E0E0E0;--spacing-xs:0.5rem;--spacing-sm:1rem;--spacing-md:1.5rem;--spacing-lg:2rem;--spacing-xl:3rem;--spacing-2xl:4rem;--radius-sm:4px;--radius-md:8px;--radius-lg:12px;--radius-full:9999px;--shadow-sm:0 2px 4px rgba(0,0,0,0.05);--font-primary:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--font-heading:'Poppins',sans-serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-primary);font-size:16px;line-height:1.6;color:var(--text-dark);background:var(--bg-white);overflow-x:hidden}
+    .container{max-width:1200px;margin:0 auto;padding:0 var(--spacing-md)}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:600;line-height:1.2;margin-bottom:var(--spacing-sm)}
+    h1{font-size:clamp(2rem,5vw,3.5rem)}
+    h2{font-size:clamp(1.75rem,4vw,2.5rem)}
+    img{max-width:100%;height:auto;display:block}
+    .top-bar{background:var(--text-dark);color:#fff;padding:var(--spacing-xs) 0;font-size:0.875rem}
+    .top-bar-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--spacing-sm)}
+    .navbar{background:#fff;box-shadow:var(--shadow-sm);position:sticky;top:0;z-index:1000}
+    .nav-wrapper{display:flex;align-items:center;justify-content:space-between;padding:var(--spacing-sm) 0}
+    .logo-img{height:60px;width:auto}
+    .mobile-menu-toggle{display:none;flex-direction:column;gap:5px;background:transparent;border:none;cursor:pointer;padding:0.75rem;min-width:44px;min-height:44px;justify-content:center;align-items:center;z-index:1001;position:relative}
+    .page-hero{padding:var(--spacing-2xl) 0;background:linear-gradient(135deg,#4A5568 0%,#2D3748 30%,#1A202C 60%,#0066CC 100%);position:relative;overflow:hidden}
+    .btn{display:inline-flex;align-items:center;gap:var(--spacing-xs);padding:0.75rem 1.5rem;font-size:1rem;font-weight:500;border-radius:var(--radius-md);border:none;cursor:pointer;transition:all 0.3s ease;text-align:center;white-space:nowrap;text-decoration:none}
+    .btn-primary{background:var(--primary-color);color:#fff}
+    .btn-lg{padding:1rem 2rem;font-size:1.125rem}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+    @media(max-width:768px){.mobile-menu-toggle{display:flex}}
+    </style>
+    
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="../css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../css/style.css"></noscript>
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="preload" href="../css/pages.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../css/pages.css"></noscript>
+    
+    <!-- Load fonts asynchronously -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Defer Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
     <script type="application/ld+json">
     {
@@ -82,7 +127,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <a href="../index.html"><img src="../assets/images/JEDH Logo.png" alt="JEDH Logo" class="logo-img"></a>
+                    <a href="../index.html"><img src="../assets/images/JEDH Logo.png" alt="JEDH Logo" class="logo-img" width="200" height="60" fetchpriority="high" loading="eager"></a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
@@ -113,7 +158,7 @@
                         <i class="fab fa-whatsapp"></i> <span data-en="Book Evaluation" data-hi="मूल्यांकन बुक करें">Book Evaluation</span>
                     </a>
                 </div>
-                <button class="mobile-menu-toggle">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -153,12 +198,12 @@
                         </div>
                     </div>
                     <div class="hero-ctas">
-                        <a href="https://wa.me/919602227267" class="btn btn-primary btn-lg">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/919602227267" class="btn btn-primary btn-lg" aria-label="Book evaluation on WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
                             <span data-en="Book Evaluation This Week" data-hi="इस सप्ताह मूल्यांकन बुक करें">Book Evaluation This Week</span>
                         </a>
-                        <a href="tel:+919602227267" class="btn btn-outline btn-lg">
-                            <i class="fas fa-phone"></i>
+                        <a href="tel:+919602227267" class="btn btn-outline btn-lg" aria-label="Call us at +91 9602227267">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
                             <span data-en="Call Now" data-hi="अभी कॉल करें">Call Now</span>
                         </a>
                     </div>
@@ -201,7 +246,7 @@
                 </div>
                 <div class="content-image">
                     <div class="info-box">
-                        <h4 data-en="When to Get Surgery?" data-hi="सर्जरी कब करवाएं?">When to Get Surgery?</h4>
+                        <h3 data-en="When to Get Surgery?" data-hi="सर्जरी कब करवाएं?">When to Get Surgery?</h3>
                         <p data-en="Surgery is recommended when cataracts start affecting your daily activities like reading, driving, or recognizing faces. Our doctors will evaluate and guide you on the best timing." data-hi="सर्जरी की सिफारिश तब की जाती है जब मोतियाबिंद आपकी दैनिक गतिविधियों जैसे पढ़ने, ड्राइविंग या चेहरे पहचानने को प्रभावित करने लगे। हमारे डॉक्टर मूल्यांकन करेंगे और सर्वोत्तम समय पर आपका मार्गदर्शन करेंगे।">Surgery is recommended when cataracts start affecting your daily activities like reading, driving, or recognizing faces. Our doctors will evaluate and guide you on the best timing.</p>
                     </div>
                 </div>
@@ -376,7 +421,7 @@
 
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h4 data-en="Is cataract surgery painful?" data-hi="क्या मोतियाबिंद की सर्जरी दर्दनाक है?">Is cataract surgery painful?</h4>
+                    <h3 data-en="Is cataract surgery painful?" data-hi="क्या मोतियाबिंद की सर्जरी दर्दनाक है?">Is cataract surgery painful?</h3>
                     <p data-en="No. The procedure is performed under local anesthesia (eye drops). You may feel slight pressure but no pain. Most patients are surprised at how comfortable the experience is." data-hi="नहीं। प्रक्रिया स्थानीय एनेस्थीसिया (आई ड्रॉप्स) के तहत की जाती है। आपको हल्का दबाव महसूस हो सकता है लेकिन कोई दर्द नहीं। अधिकांश रोगी आश्चर्यचकित होते हैं कि अनुभव कितना आरामदायक है।">No. The procedure is performed under local anesthesia (eye drops). You may feel slight pressure but no pain. Most patients are surprised at how comfortable the experience is.</p>
                 </div>
 
@@ -462,13 +507,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <img src="../assets/images/JEDH Logo.png" alt="JEDH Logo" class="footer-logo">
+                    <img src="../assets/images/JEDH Logo.png" alt="JEDH Logo" class="footer-logo" width="200" height="60" loading="lazy">
                     <p data-en="Trusted eye and dental care in Jaipur since 2017. Doctor-led, patient-focused healthcare." data-hi="2017 से जयपुर में विश्वसनीय नेत्र और दंत चिकित्सा देखभाल। डॉक्टर के नेतृत्व में, रोगी-केंद्रित स्वास्थ्य सेवा।">Trusted eye and dental care in Jaipur since 2017. Doctor-led, patient-focused healthcare.</p>
                     <div class="social-links">
-                        <a href="https://www.instagram.com/jaipureyedentalhospital" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@jedh" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.linkedin.com/in/dr-amit-gupta-1938985b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/919602227267" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/jaipureyedentalhospital" target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/@jedh" target="_blank" aria-label="Visit our YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/dr-amit-gupta-1938985b/" target="_blank" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/919602227267" target="_blank" aria-label="Message us on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -518,10 +563,11 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/919602227267" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/919602227267" class="whatsapp-float" target="_blank" aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
-    <script src="../js/main.js"></script>
+    <!-- Scripts - Deferred for better performance -->
+    <script src="../js/main.js" defer></script>
 </body>
 </html>
