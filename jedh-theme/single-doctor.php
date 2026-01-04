@@ -78,10 +78,10 @@ get_header(); ?>
                             </div>
                             
                             <div class="doctor-cta">
-                                <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '919602227267'); ?>?text=Hi, I would like to book a consultation with <?php echo urlencode(get_the_title()); ?>" class="btn btn-primary">
+                                <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '917976551251'); ?>?text=Hi, I would like to book a consultation with <?php echo urlencode(get_the_title()); ?>" class="btn btn-primary">
                                     <i class="fab fa-whatsapp"></i> Book Consultation
                                 </a>
-                                <a href="tel:<?php echo jedh_get_option('phone', '+919602227267'); ?>" class="btn btn-secondary">
+                                <a href="tel:<?php echo jedh_get_option('phone', '+917976551251'); ?>" class="btn btn-secondary">
                                     <i class="fas fa-phone"></i> Call Now
                                 </a>
                             </div>

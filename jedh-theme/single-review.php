@@ -69,7 +69,7 @@ get_header(); ?>
                     
                     <div class="review-cta">
                         <p>Ready to experience the same quality care?</p>
-                        <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '919602227267'); ?>" class="btn btn-primary">
+                        <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '917976551251'); ?>" class="btn btn-primary">
                             <i class="fab fa-whatsapp"></i> Book Your Consultation
                         </a>
                     </div>

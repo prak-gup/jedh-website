@@ -35,7 +35,7 @@
         <div class="container">
             <div class="top-bar-content">
                 <div class="top-bar-left">
-                    <span><i class="fas fa-phone"></i> <?php echo jedh_get_option('phone', '+91 9602227267'); ?></span>
+                    <span><i class="fas fa-phone"></i> <?php echo jedh_get_option('phone', '+91 7976551251'); ?></span>
                     <span><i class="fas fa-envelope"></i> <?php echo jedh_get_option('email', 'dramit.eye@gmail.com'); ?></span>
                 </div>
                 <div class="top-bar-right">
@@ -73,7 +73,7 @@
                 ?>
                 
                 <div class="nav-cta">
-                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '919602227267'); ?>" class="btn btn-primary">
+                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '917976551251'); ?>" class="btn btn-primary">
                         <i class="fab fa-whatsapp"></i> 
                         <span data-en="Book on WhatsApp" data-hi="व्हाट्सएप पर बुक करें">Book on WhatsApp</span>
                     </a>

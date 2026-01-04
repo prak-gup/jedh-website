@@ -476,10 +476,10 @@ add_action('wp_ajax_nopriv_jedh_booking', 'jedh_ajax_booking_handler');
  * Theme options
  */
 function jedh_theme_options() {
-    add_option('jedh_phone', '+91 9602227267');
+    add_option('jedh_phone', '+91 7976551251');
     add_option('jedh_email', 'dramit.eye@gmail.com');
     add_option('jedh_address', 'Jaipur, Rajasthan');
-    add_option('jedh_whatsapp', '919602227267');
+    add_option('jedh_whatsapp', '917976551251');
     add_option('jedh_working_hours', 'Mon-Sat: 9:00 AM - 7:00 PM');
 }
 add_action('admin_init', 'jedh_theme_options');
@@ -496,7 +496,7 @@ function jedh_customize_register($wp_customize) {
 
     // Phone
     $wp_customize->add_setting('jedh_phone', array(
-        'default' => '+91 9602227267',
+        'default' => '+91 7976551251',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control('jedh_phone', array(
@@ -518,7 +518,7 @@ function jedh_customize_register($wp_customize) {
 
     // WhatsApp
     $wp_customize->add_setting('jedh_whatsapp', array(
-        'default' => '919602227267',
+        'default' => '917976551251',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     $wp_customize->add_control('jedh_whatsapp', array(
