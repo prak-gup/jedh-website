@@ -114,11 +114,11 @@ $services = get_posts(array(
             
             <div class="alternative-contact">
                 <p>Or contact us directly:</p>
-                <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '919602227267'); ?>" class="btn btn-whatsapp">
+                <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '917976551251'); ?>" class="btn btn-whatsapp">
                     <i class="fab fa-whatsapp"></i>
                     WhatsApp
                 </a>
-                <a href="tel:<?php echo jedh_get_option('phone', '+919602227267'); ?>" class="btn btn-phone">
+                <a href="tel:<?php echo jedh_get_option('phone', '+917976551251'); ?>" class="btn btn-phone">
                     <i class="fas fa-phone"></i>
                     Call Now
                 </a>

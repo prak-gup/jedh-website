@@ -27,7 +27,7 @@ get_header(); ?>
                         Go to Homepage
                     </a>
                     
-                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '919602227267'); ?>" class="btn btn-secondary">
+                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '917976551251'); ?>" class="btn btn-secondary">
                         <i class="fab fa-whatsapp"></i>
                         Contact Us
                     </a>

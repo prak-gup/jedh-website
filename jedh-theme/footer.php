@@ -15,7 +15,7 @@
                         <a href="https://www.instagram.com/jaipureyedentalhospital" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.youtube.com/@jedh" target="_blank"><i class="fab fa-youtube"></i></a>
                         <a href="https://www.linkedin.com/in/dr-amit-gupta-1938985b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '919602227267'); ?>" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '917976551251'); ?>" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                 <div class="footer-col">
                     <h4>Contact Us</h4>
                     <ul class="contact-info">
-                        <li><i class="fas fa-phone"></i> <?php echo jedh_get_option('phone', '+91 9602227267'); ?></li>
+                        <li><i class="fas fa-phone"></i> <?php echo jedh_get_option('phone', '+91 7976551251'); ?></li>
                         <li><i class="fas fa-envelope"></i> <?php echo jedh_get_option('email', 'dramit.eye@gmail.com'); ?></li>
                         <li><i class="fas fa-map-marker-alt"></i> <?php echo jedh_get_option('address', 'Jaipur, Rajasthan'); ?></li>
                         <li><i class="fas fa-clock"></i> <?php echo jedh_get_option('working_hours', 'Mon-Sat: 10 AM - 7 PM'); ?></li>
@@ -72,7 +72,7 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '919602227267'); ?>" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '917976551251'); ?>" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 

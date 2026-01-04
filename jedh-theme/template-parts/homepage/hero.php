@@ -33,11 +33,11 @@
 
                 <!-- Hero CTAs -->
                 <div class="hero-ctas">
-                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '919602227267'); ?>" class="btn btn-primary btn-lg">
+                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '917976551251'); ?>" class="btn btn-primary btn-lg">
                         <i class="fab fa-whatsapp"></i>
                         <span data-en="Book Same-Week Consultation" data-hi="इस सप्ताह परामर्श बुक करें">Book Same-Week Consultation</span>
                     </a>
-                    <a href="tel:<?php echo jedh_get_option('phone', '+919602227267'); ?>" class="btn btn-secondary btn-lg">
+                    <a href="tel:<?php echo jedh_get_option('phone', '+917976551251'); ?>" class="btn btn-secondary btn-lg">
                         <i class="fas fa-phone"></i>
                         <span data-en="Call Now" data-hi="अभी कॉल करें">Call Now</span>
                     </a>

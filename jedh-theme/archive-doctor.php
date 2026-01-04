@@ -64,7 +64,7 @@ get_header(); ?>
                                 
                                 <div class="doctor-cta">
                                     <a href="<?php the_permalink(); ?>" class="btn btn-outline">View Profile</a>
-                                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '919602227267'); ?>?text=Hi, I would like to book a consultation with <?php echo urlencode(get_the_title()); ?>" class="btn btn-primary">
+                                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '917976551251'); ?>?text=Hi, I would like to book a consultation with <?php echo urlencode(get_the_title()); ?>" class="btn btn-primary">
                                         <i class="fab fa-whatsapp"></i> Book
                                     </a>
                                 </div>

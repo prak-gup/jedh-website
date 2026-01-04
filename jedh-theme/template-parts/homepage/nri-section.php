@@ -26,7 +26,7 @@
                     <a href="<?php echo home_url('/nri/'); ?>" class="btn btn-primary">
                         <span data-en="Explore NRI Packages" data-hi="NRI पैकेज देखें">Explore NRI Packages</span>
                     </a>
-                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '919602227267'); ?>" class="btn btn-outline">
+                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '917976551251'); ?>" class="btn btn-outline">
                         <i class="fab fa-whatsapp"></i>
                         <span data-en="Plan on WhatsApp" data-hi="व्हाट्सएप पर योजना बनाएं">Plan on WhatsApp</span>
                     </a>

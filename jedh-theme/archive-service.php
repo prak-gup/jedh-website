@@ -77,7 +77,7 @@ get_header(); ?>
                                 
                                 <div class="service-cta">
                                     <a href="<?php the_permalink(); ?>" class="btn btn-outline">View Details</a>
-                                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '919602227267'); ?>?text=Hi, I am interested in <?php echo urlencode(get_the_title()); ?>" class="btn btn-primary">
+                                    <a href="https://wa.me/<?php echo jedh_get_option('whatsapp', '917976551251'); ?>?text=Hi, I am interested in <?php echo urlencode(get_the_title()); ?>" class="btn btn-primary">
                                         <i class="fab fa-whatsapp"></i> Get Quote
                                     </a>
                                 </div>
