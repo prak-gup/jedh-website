@@ -1789,3 +1789,169 @@ html {
         font-size: 1.125rem !important;
     }
 }
+
+/* ===================================
+   NRI PAGE ALIGNMENT FIXES
+   Ensure all blocks are properly centered
+   =================================== */
+
+/* Fix procedure-cards to properly center items */
+.procedure-cards {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px)) !important;
+    gap: var(--spacing-8) !important;
+    max-width: 1300px !important;
+    margin: 0 auto !important;
+    padding: 0 var(--spacing-6) !important;
+    width: 100% !important;
+    justify-content: center !important;
+}
+
+.procedure-card {
+    width: 100% !important;
+    max-width: 400px !important;
+}
+
+/* Features grid - center all items */
+.features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: var(--spacing-8) !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
+    justify-items: center !important;
+}
+
+.feature-item {
+    width: 100% !important;
+    max-width: 350px !important;
+}
+
+/* Testimonial slider - center all cards */
+.testimonial-slider {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: var(--spacing-8) !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
+    justify-items: center !important;
+}
+
+.testimonial-card {
+    width: 100% !important;
+    max-width: 380px !important;
+}
+
+/* FAQ grid - center items */
+.faq-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: var(--spacing-8) !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
+    justify-items: center !important;
+}
+
+.faq-item {
+    width: 100% !important;
+    max-width: 550px !important;
+}
+
+/* Timeline - ensure centered */
+.timeline {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+/* Two-column layout - center the content */
+.two-column {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+    gap: var(--spacing-12) !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    align-items: start !important;
+}
+
+/* Section headers - ensure centered */
+.section-header {
+    text-align: center !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: var(--spacing-12) !important;
+}
+
+/* Content sections - ensure proper centering */
+.content-section .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Responsive adjustments for NRI page alignment */
+@media (max-width: 1024px) {
+    .procedure-cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 380px)) !important;
+        gap: var(--spacing-6) !important;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-8) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .procedure-cards {
+        grid-template-columns: 1fr !important;
+        max-width: 450px !important;
+        justify-items: center !important;
+    }
+
+    .procedure-card {
+        max-width: 100% !important;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+    }
+
+    .feature-item {
+        max-width: 100% !important;
+    }
+
+    .testimonial-slider {
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+    }
+
+    .testimonial-card {
+        max-width: 100% !important;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr !important;
+        justify-items: center !important;
+    }
+
+    .faq-item {
+        max-width: 100% !important;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr !important;
+    }
+
+    .info-box,
+    .content-text {
+        width: 100% !important;
+    }
+}
