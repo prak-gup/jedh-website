@@ -1,0 +1,328 @@
+/**
+ * JEDH Design System - CSS Custom Properties
+ * Generated from design-tokens.json
+ *
+ * This file contains all design tokens as CSS variables for consistent
+ * styling across the entire website.
+ */
+
+:root {
+  /* ========================================
+     COLORS
+     ======================================== */
+
+  /* Primary Colors (Blue) - Professional Medical Blue */
+  --color-primary-50: #EBF5FF;
+  --color-primary-100: #D6EBFF;
+  --color-primary-200: #ADD6FF;
+  --color-primary-300: #85C2FF;
+  --color-primary-400: #5CADFF;
+  --color-primary-500: #0066CC;
+  --color-primary-600: #0052A3;
+  --color-primary-700: #003D7A;
+  --color-primary-800: #002952;
+  --color-primary-900: #001429;
+
+  /* Neutral Colors (Grays) */
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-50: #F9FAFB;
+  --color-neutral-100: #F3F4F6;
+  --color-neutral-200: #E5E7EB;
+  --color-neutral-300: #D1D5DB;
+  --color-neutral-400: #9CA3AF;
+  --color-neutral-500: #6B7280;
+  --color-neutral-600: #4B5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1F2937;
+  --color-neutral-900: #111827;
+  --color-neutral-950: #030712;
+
+  /* Success Colors (Green) */
+  --color-success-50: #ECFDF5;
+  --color-success-100: #D1FAE5;
+  --color-success-500: #10B981;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+
+  /* Warning Colors (Yellow) */
+  --color-warning-50: #FFFBEB;
+  --color-warning-100: #FEF3C7;
+  --color-warning-500: #F59E0B;
+  --color-warning-600: #D97706;
+  --color-warning-700: #B45309;
+
+  /* Error Colors (Red) */
+  --color-error-50: #FEF2F2;
+  --color-error-100: #FEE2E2;
+  --color-error-500: #EF4444;
+  --color-error-600: #DC2626;
+  --color-error-700: #B91C1C;
+
+  /* Info Colors (Blue) */
+  --color-info-50: #EFF6FF;
+  --color-info-100: #DBEAFE;
+  --color-info-500: #3B82F6;
+  --color-info-600: #2563EB;
+  --color-info-700: #1D4ED8;
+
+  /* Brand Colors (Third-party services) */
+  --color-whatsapp: #25D366;
+  --color-youtube: #FF0000;
+
+  /* Extended Warning Colors */
+  --color-warning-400: #FBBF24;
+
+  /* Accent Colors for Visual Interest */
+  --color-accent-teal: #0D9488;
+  --color-accent-teal-light: #14B8A6;
+  --color-accent-purple: #7C3AED;
+  --color-accent-purple-light: #8B5CF6;
+
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+
+  /* Font Families */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-mono: 'Fira Code', 'Monaco', 'Courier New', monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  --font-size-6xl: 3.75rem;     /* 60px */
+  --font-size-7xl: 4.5rem;      /* 72px */
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+
+  /* Letter Spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* ========================================
+     SPACING
+     ======================================== */
+
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+  --spacing-16: 4rem;     /* 64px */
+  --spacing-20: 5rem;     /* 80px */
+  --spacing-24: 6rem;     /* 96px */
+  --spacing-32: 8rem;     /* 128px */
+  --spacing-40: 10rem;    /* 160px */
+  --spacing-48: 12rem;    /* 192px */
+  --spacing-56: 14rem;    /* 224px */
+  --spacing-64: 16rem;    /* 256px */
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+
+  --radius-none: 0;
+  --radius-sm: 0.25rem;    /* 4px */
+  --radius-base: 0.5rem;   /* 8px */
+  --radius-md: 0.75rem;    /* 12px */
+  --radius-lg: 1rem;       /* 16px */
+  --radius-xl: 1.25rem;    /* 20px */
+  --radius-2xl: 1.5rem;    /* 24px */
+  --radius-3xl: 2rem;      /* 32px */
+  --radius-full: 9999px;
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  /* ========================================
+     BREAKPOINTS (for reference in JS)
+     ======================================== */
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* ========================================
+     Z-INDEX
+     ======================================== */
+
+  --z-index-0: 0;
+  --z-index-10: 10;
+  --z-index-20: 20;
+  --z-index-30: 30;
+  --z-index-40: 40;
+  --z-index-50: 50;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+
+  /* ========================================
+     TRANSITIONS
+     ======================================== */
+
+  /* Duration */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 350ms;
+  --duration-slower: 500ms;
+
+  /* Timing Functions */
+  --timing-ease: ease;
+  --timing-ease-in: ease-in;
+  --timing-ease-out: ease-out;
+  --timing-ease-in-out: ease-in-out;
+  --timing-linear: linear;
+
+  /* ========================================
+     OPACITY
+     ======================================== */
+
+  --opacity-0: 0;
+  --opacity-5: 0.05;
+  --opacity-10: 0.1;
+  --opacity-20: 0.2;
+  --opacity-30: 0.3;
+  --opacity-40: 0.4;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+  --opacity-100: 1;
+
+  /* ========================================
+     ICON SIZES
+     ======================================== */
+
+  --icon-size-xs: 1rem;      /* 16px */
+  --icon-size-sm: 1.25rem;   /* 20px */
+  --icon-size-base: 1.5rem;  /* 24px */
+  --icon-size-lg: 2rem;      /* 32px */
+  --icon-size-xl: 2.5rem;    /* 40px */
+  --icon-size-2xl: 3rem;     /* 48px */
+
+  /* ========================================
+     CONTAINER & LAYOUT
+     ======================================== */
+
+  --container-max-width: 1200px;
+  --touch-target-min: 44px;
+
+  /* ========================================
+     LEGACY ALIASES (for backward compatibility)
+     ======================================== */
+
+  --primary-color: var(--color-primary-500);
+  --primary-dark: var(--color-primary-700);
+  --secondary-color: var(--color-success-500);
+  --text-dark: var(--color-neutral-900);
+  --text-medium: var(--color-neutral-600);
+  --bg-white: var(--color-neutral-0);
+  --bg-light: var(--color-neutral-50);
+  --border-color: var(--color-neutral-200);
+  --font-primary: var(--font-family-primary);
+  --font-heading: var(--font-family-secondary);
+}
+
+/* ========================================
+   RESPONSIVE FONT SIZES
+   ======================================== */
+
+/* Mobile adjustments - reduce display/heading sizes by 0.6-0.7x */
+@media (max-width: 768px) {
+  :root {
+    --font-size-7xl: 2.7rem;   /* 72px → 43px (0.6x) */
+    --font-size-6xl: 2.25rem;  /* 60px → 36px (0.6x) */
+    --font-size-5xl: 2.1rem;   /* 48px → 34px (0.7x) */
+    --font-size-4xl: 1.575rem; /* 36px → 25px (0.7x) */
+    --font-size-3xl: 1.5rem;   /* 30px → 24px (0.8x) */
+  }
+}
+
+/* ========================================
+   REDUCED MOTION SUPPORT
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+    --duration-slower: 0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Screen reader only - for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible - for keyboard navigation */
+.focus-visible:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}

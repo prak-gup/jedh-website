@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadInsuranceLogos();
     initCTATracking();
     initYouTubeVideoSlider();
+    initTeamSlider();
 
 });
 
@@ -1240,6 +1241,123 @@ function clearAllOldCache() {
         });
     } catch (error) {
         console.error('Error clearing old cache:', error);
+    }
+}
+
+// ===================================
+// Team Photo Slider
+// ===================================
+function initTeamSlider() {
+    const slides = document.querySelectorAll('.team-slide');
+    const dots = document.querySelectorAll('.team-slider-dot');
+    const prevBtn = document.querySelector('.team-slider-prev');
+    const nextBtn = document.querySelector('.team-slider-next');
+
+    if (!slides.length || slides.length <= 1) return; // No slider needed
+
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    // Show slide function
+    function showSlide(index) {
+        // Remove active class from all slides and dots
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        // Add active class to current slide and dot
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+
+        currentSlide = index;
+    }
+
+    // Next slide
+    function nextSlide() {
+        const next = (currentSlide + 1) % totalSlides;
+        showSlide(next);
+    }
+
+    // Previous slide
+    function prevSlide() {
+        const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(prev);
+    }
+
+    // Event listeners for arrows
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+    }
+
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showSlide(index));
+    });
+
+    // Auto-advance slider every 5 seconds
+    let autoSlideInterval = setInterval(nextSlide, 5000);
+
+    // Pause auto-slide on hover
+    const sliderContainer = document.querySelector('.team-slider');
+    if (sliderContainer) {
+        sliderContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        sliderContainer.addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        const teamSection = document.querySelector('.team-showcase');
+        if (!teamSection) return;
+
+        // Only handle if team section is in viewport
+        const rect = teamSection.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+        if (isVisible) {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        }
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    if (sliderContainer) {
+        sliderContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        sliderContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+    }
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe left - next slide
+                nextSlide();
+            } else {
+                // Swipe right - previous slide
+                prevSlide();
+            }
+        }
     }
 }
 
