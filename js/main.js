@@ -573,15 +573,43 @@ initMobileOptimizations();
 // YouTube Video Slider
 // ===================================
 
-// YouTube API Configuration
+// YouTube Configuration (no API key needed - uses RSS feed)
 const YOUTUBE_CONFIG = {
-    apiKey: 'AIzaSyCVUqY8DKR5cG4tFRz1j1wDLajd0TrmGwU',
-    channelHandle: 'jedh', // YouTube handle without @
     channelId: 'UCLN1jQPyiXFuerx-TMjuEeQ', // Direct channel ID for JEDH
-    maxResults: 12, // Increased to show more videos in slider
-    cacheKey: 'jedh_youtube_videos_v2', // Versioned cache key to reset old cache
+    maxResults: 12,
+    cacheKey: 'jedh_youtube_videos_v3',
     cacheExpiry: 24 * 60 * 60 * 1000 // 24 hours in milliseconds
 };
+
+// Hardcoded fallback video data from JEDH channel (updated Jan 2026)
+const FALLBACK_VIDEOS = [
+    { id: 'jRY3wmp3xyY', title: 'More Than Surgery | Life of an Ophthalmologist' },
+    { id: 'hwwaPTZUT-U', title: '83-Year-Old Patient, Cool & Calm During Cataract Surgery' },
+    { id: 'DI7KaCMmcFc', title: 'How We Prepare Our Team for Advanced Dental Technology' },
+    { id: 'T90W7SPM5_k', title: 'Femto LASIK Patient Testimonial | Bhumika\'s Experience' },
+    { id: 'Frj4sRSAshI', title: 'Real stories. Real trust.' },
+    { id: 'NcWYTEDwVGg', title: 'Small space. Big focus' },
+    { id: 'ii-7KT0Vw5U', title: 'Young Cataract Surgery | Rayner Galaxy IOL Implanted' },
+    { id: 'LSmSLxrp-_k', title: 'Age is just a number - Fitness is a choice' },
+    { id: 'F_DRuXJcPH4', title: 'Old Lenses in New Frame? Here\'s Why It Can Cause Problems' },
+    { id: 'pSCuCvfHDdA', title: 'Thinking About Invisalign? Watch This First Visit Guide' },
+    { id: 'o9vBuGwR6XU', title: 'Cataract Surgery Follow-Up: Don\'t Forget Your Eye Drops & Papers' },
+    { id: 'hTGzSA3Jnpg', title: 'My Oldest Patient Ever - 105 Years Young' },
+    { id: 'uY0QCDfMKrQ', title: 'Root Canal Without Fear | Patient Review' },
+    { id: 'MVbhHdEZ90I', title: 'Don\'t Pick Your Laser Surgery Before Watching This' },
+    { id: 'LfWgQhCliSE', title: 'Stop Using Reading Glasses! Your Eyes Are at Risk' }
+].map(v => ({
+    id: v.id,
+    title: v.title,
+    description: '',
+    thumbnail: `https://i.ytimg.com/vi/${v.id}/mqdefault.jpg`,
+    publishedAt: '',
+    channelId: YOUTUBE_CONFIG.channelId,
+    viewCount: 0,
+    duration: '',
+    url: `https://www.youtube.com/watch?v=${v.id}`,
+    embedUrl: `https://www.youtube.com/embed/${v.id}?autoplay=1&rel=0`
+}));
 
 // Global variables for video slider
 let currentVideoIndex = 0;
@@ -598,45 +626,22 @@ function initYouTubeVideoSlider() {
     updateVideosPerView();
     window.addEventListener('resize', updateVideosPerView);
 
-    // Clear all old cache keys to ensure fresh fetch with correct channel
-    clearAllOldCache();
-    
-    // Force fresh fetch on initialization to ensure correct channel videos
-    // Skip cache check on first load after code update
     console.log('Initializing YouTube video slider with channel ID:', YOUTUBE_CONFIG.channelId);
-    
-    // Always fetch fresh videos to ensure correct channel
-    // Cache will be used on subsequent page loads
 
-    // Test API connection first
-    testYouTubeAPI().then(() => {
-        // Fetch videos from YouTube API
-        fetchYouTubeVideos();
-    }).catch((error) => {
-        console.error('YouTube API test failed:', error);
-        showErrorState();
-    });
-}
+    // Clear old cache versions
+    clearAllOldCache();
 
-// Test function to check if API is working
-async function testYouTubeAPI() {
-    try {
-        console.log('Testing YouTube API connection...');
-        const testUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=test&type=video&maxResults=1&key=${YOUTUBE_CONFIG.apiKey}`;
-        
-        const response = await fetch(testUrl);
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`API test failed: ${response.status} - ${errorText}`);
-        }
-        
-        const data = await response.json();
-        console.log('YouTube API test successful:', data);
-        return true;
-    } catch (error) {
-        console.error('YouTube API test failed:', error);
-        throw error;
+    // Check cache first
+    const cachedVideos = getCachedVideos();
+    if (cachedVideos && cachedVideos.length > 0) {
+        console.log('Using cached videos:', cachedVideos.length);
+        videos = cachedVideos;
+        renderVideoSlider();
+        return;
     }
+
+    // Try fetching from RSS feed, fall back to hardcoded data
+    fetchYouTubeVideos();
 }
 
 function updateVideosPerView() {
@@ -652,215 +657,64 @@ function updateVideosPerView() {
 async function fetchYouTubeVideos() {
     try {
         showLoadingState();
-        console.log('Starting YouTube video fetch...');
-        
-        // Get channel ID - try handle first, then use direct ID
-        const channelId = await getChannelId(YOUTUBE_CONFIG.channelHandle);
-        console.log('Channel ID:', channelId);
-        
-        if (!channelId) {
-            throw new Error('Channel not found. Please check the channel handle or provide the channel ID manually.');
-        }
+        console.log('Fetching YouTube videos via RSS feed...');
 
-        // Always use the configured channel ID to ensure we get videos from JEDH channel
-        const validatedChannelId = YOUTUBE_CONFIG.channelId;
-        console.log('Using channel ID:', validatedChannelId);
-        console.log('Expected channel ID:', YOUTUBE_CONFIG.channelId);
-        
-        if (channelId !== validatedChannelId) {
-            console.warn('Channel ID mismatch. Resolved:', channelId, 'Using configured:', validatedChannelId);
-        }
-        
-        const apiUrl = `https://www.googleapis.com/youtube/v3/search?` +
-            `part=snippet&` +
-            `channelId=${validatedChannelId}&` +
-            `order=viewCount&` +
-            `type=video&` +
-            `maxResults=${YOUTUBE_CONFIG.maxResults}&` +
-            `key=${YOUTUBE_CONFIG.apiKey}`;
-            
-        console.log('Fetching videos from JEDH channel:', validatedChannelId);
-        console.log('API URL (channelId parameter):', `channelId=${validatedChannelId}`);
-        
-        const response = await fetch(apiUrl);
+        // Try fetching from YouTube RSS feed via CORS proxy
+        const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${YOUTUBE_CONFIG.channelId}`;
+        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
+
+        const response = await fetch(proxyUrl);
 
         if (!response.ok) {
-            const errorText = await response.text();
-            console.error('API Error Response:', errorText);
-            throw new Error(`API request failed: ${response.status} - ${errorText}`);
+            throw new Error(`RSS fetch failed: ${response.status}`);
         }
 
-        const data = await response.json();
-        console.log('API Response:', data);
-        console.log(`API returned ${data.items?.length || 0} videos (requested ${YOUTUBE_CONFIG.maxResults})`);
-        
-        if (!data.items || data.items.length === 0) {
-            throw new Error('No videos found in the channel');
-        }
-        
-        // Log all video titles and channel IDs for debugging
-        console.log('All videos from API:', data.items.map(item => ({
-            title: item.snippet.title,
-            channelId: item.snippet.channelId,
-            videoId: item.id.videoId
-        })));
+        const xmlText = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+        const entries = xmlDoc.querySelectorAll('entry');
 
-        // Filter videos to ensure they belong to the correct channel
-        console.log(`Total videos returned from API: ${data.items.length}`);
-        console.log('Expected channel ID:', YOUTUBE_CONFIG.channelId);
-        
-        const correctChannelVideos = data.items.filter(item => {
-            const videoChannelId = item.snippet.channelId;
-            const isCorrect = videoChannelId === YOUTUBE_CONFIG.channelId;
-            if (!isCorrect) {
-                console.warn('Filtered out video from wrong channel:', {
-                    title: item.snippet.title,
-                    channelId: videoChannelId,
-                    expected: YOUTUBE_CONFIG.channelId
-                });
-            }
-            return isCorrect;
-        });
-
-        if (correctChannelVideos.length === 0) {
-            console.error('No videos found from correct JEDH channel. All videos were filtered out.');
-            console.error('Videos received:', data.items.map(item => ({
-                title: item.snippet.title,
-                channelId: item.snippet.channelId
-            })));
-            throw new Error('No videos found from the correct JEDH channel');
+        if (!entries || entries.length === 0) {
+            throw new Error('No videos found in RSS feed');
         }
 
-        console.log(`✓ Found ${correctChannelVideos.length} valid videos from JEDH channel (${YOUTUBE_CONFIG.channelId})`);
-
-        // Process and enhance video data
-        videos = await enhanceVideoData(correctChannelVideos);
-        console.log(`✓ Processed ${videos.length} videos for display:`, videos.map(v => v.title));
-        
-        // Cache the videos
-        cacheVideos(videos);
-        
-        // Render the slider
-        renderVideoSlider();
-        
-    } catch (error) {
-        console.error('Error fetching YouTube videos:', error);
-        showErrorState();
-    }
-}
-
-async function getChannelId(handle) {
-    try {
-        // Method 1: Try using forHandle parameter (YouTube Data API v3)
-        // This is the correct way to get channel ID from @handle
-        let response = await fetch(
-            `https://www.googleapis.com/youtube/v3/channels?` +
-            `part=id&` +
-            `forHandle=${handle}&` +
-            `key=${YOUTUBE_CONFIG.apiKey}`
-        );
-
-        if (response.ok) {
-            const data = await response.json();
-            if (data.items && data.items.length > 0) {
-                const channelId = data.items[0].id;
-                console.log('Channel ID found via forHandle:', channelId);
-                // Validate it matches our known channel ID
-                if (channelId === YOUTUBE_CONFIG.channelId) {
-                    return channelId;
-                } else {
-                    console.warn('Channel ID from API does not match configured ID. Using configured ID.');
-                }
-            }
-        }
-
-        // Method 2: If forHandle fails, use the direct channel ID from config
-        console.log('Using configured channel ID:', YOUTUBE_CONFIG.channelId);
-        return YOUTUBE_CONFIG.channelId;
-        
-    } catch (error) {
-        console.error('Error getting channel ID:', error);
-        // Fallback to configured channel ID
-        console.log('Falling back to configured channel ID:', YOUTUBE_CONFIG.channelId);
-        return YOUTUBE_CONFIG.channelId;
-    }
-}
-
-async function enhanceVideoData(videoItems) {
-    // Additional validation: filter out any videos that don't belong to JEDH channel
-    const validVideos = videoItems.filter(item => {
-        const videoChannelId = item.snippet.channelId;
-        const isValid = videoChannelId === YOUTUBE_CONFIG.channelId;
-        if (!isValid) {
-            console.warn('Filtered out video from wrong channel:', item.snippet.title, 'Channel ID:', videoChannelId);
-        }
-        return isValid;
-    });
-
-    if (validVideos.length === 0) {
-        console.error('No valid videos found after filtering');
-        return [];
-    }
-
-    const videoIds = validVideos.map(item => item.id.videoId).join(',');
-    
-    try {
-        // Get additional video details (duration, view count, etc.)
-        const response = await fetch(
-            `https://www.googleapis.com/youtube/v3/videos?` +
-            `part=contentDetails,statistics,snippet&` +
-            `id=${videoIds}&` +
-            `key=${YOUTUBE_CONFIG.apiKey}`
-        );
-
-        if (!response.ok) {
-            throw new Error('Failed to get video details');
-        }
-
-        const detailsData = await response.json();
-        const videoDetails = detailsData.items;
-
-        // Combine snippet data with details and ensure channel validation
-        const enhancedVideos = validVideos.map((item, index) => {
-            const details = videoDetails.find(d => d.id === item.id.videoId) || {};
-            
-            // Double-check channel ID from video details
-            const videoChannelId = details.snippet?.channelId || item.snippet.channelId;
-            if (videoChannelId !== YOUTUBE_CONFIG.channelId) {
-                console.warn('Video channel mismatch:', item.snippet.title);
-                return null;
-            }
+        videos = Array.from(entries).slice(0, YOUTUBE_CONFIG.maxResults).map(entry => {
+            const videoId = entry.querySelector('videoId')?.textContent || '';
+            const title = entry.querySelector('title')?.textContent || '';
+            const published = entry.querySelector('published')?.textContent || '';
+            const mediaGroup = entry.querySelector('group');
+            const description = mediaGroup?.querySelector('description')?.textContent || '';
+            const viewCount = parseInt(mediaGroup?.querySelector('community statistics')?.getAttribute('views') || '0');
 
             return {
-                id: item.id.videoId,
-                title: item.snippet.title,
-                description: item.snippet.description,
-                thumbnail: item.snippet.thumbnails.medium.url,
-                publishedAt: item.snippet.publishedAt,
-                channelId: videoChannelId,
-                viewCount: details.statistics ? parseInt(details.statistics.viewCount) : 0,
-                duration: details.contentDetails ? formatDuration(details.contentDetails.duration) : '0:00',
-                url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
-                embedUrl: `https://www.youtube.com/embed/${item.id.videoId}?autoplay=1&rel=0`
+                id: videoId,
+                title: title,
+                description: description,
+                thumbnail: `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`,
+                publishedAt: published,
+                channelId: YOUTUBE_CONFIG.channelId,
+                viewCount: viewCount,
+                duration: '',
+                url: `https://www.youtube.com/watch?v=${videoId}`,
+                embedUrl: `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`
             };
-        }).filter(video => video !== null); // Remove any null entries
+        });
 
-        return enhancedVideos;
+        console.log(`Fetched ${videos.length} videos from RSS feed`);
+
+        // Cache the videos
+        cacheVideos(videos);
+
+        // Render the slider
+        renderVideoSlider();
+
     } catch (error) {
-        console.error('Error enhancing video data:', error);
-        // Return basic data if enhancement fails, but still validate channel
-        return validVideos.map(item => ({
-            id: item.id.videoId,
-            title: item.snippet.title,
-            description: item.snippet.description,
-            thumbnail: item.snippet.thumbnails.medium.url,
-            publishedAt: item.snippet.publishedAt,
-            channelId: item.snippet.channelId,
-            viewCount: 0,
-            duration: '0:00',
-            url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
-            embedUrl: `https://www.youtube.com/embed/${item.id.videoId}?autoplay=1&rel=0`
-        }));
+        console.error('RSS feed fetch failed, using fallback videos:', error);
+        // Use hardcoded fallback data
+        videos = FALLBACK_VIDEOS.slice(0, YOUTUBE_CONFIG.maxResults);
+        console.log(`Using ${videos.length} fallback videos`);
+        cacheVideos(videos);
+        renderVideoSlider();
     }
 }
 
@@ -950,22 +804,26 @@ function createVideoCard(video, index) {
     card.setAttribute('data-video-id', video.id);
     card.setAttribute('data-video-index', index);
 
+    const durationHtml = video.duration ? `<div class="video-duration">${video.duration}</div>` : '';
+    const viewsHtml = video.viewCount > 0 ? `
+            <div class="video-meta">
+                <div class="video-views">
+                    <i class="fas fa-eye"></i>
+                    <span>${formatViewCount(video.viewCount)}</span>
+                </div>
+            </div>` : '';
+
     card.innerHTML = `
         <div class="video-thumbnail">
             <img src="${video.thumbnail}" alt="${video.title}" loading="lazy">
             <div class="video-play-overlay">
                 <i class="fas fa-play"></i>
             </div>
-            <div class="video-duration">${video.duration}</div>
+            ${durationHtml}
         </div>
         <div class="video-info">
             <h3 class="video-title">${video.title}</h3>
-            <div class="video-meta">
-                <div class="video-views">
-                    <i class="fas fa-eye"></i>
-                    <span>${formatViewCount(video.viewCount)}</span>
-                </div>
-            </div>
+            ${viewsHtml}
         </div>
     `;
 
@@ -1226,13 +1084,12 @@ function clearVideoCache() {
 
 function clearAllOldCache() {
     try {
-        // Clear old cache keys
         const oldCacheKeys = [
             'jedh_youtube_videos',
             'jedh_youtube_videos_v1',
-            YOUTUBE_CONFIG.cacheKey // Also clear current in case it has wrong data
+            'jedh_youtube_videos_v2'
         ];
-        
+
         oldCacheKeys.forEach(key => {
             if (localStorage.getItem(key)) {
                 localStorage.removeItem(key);
