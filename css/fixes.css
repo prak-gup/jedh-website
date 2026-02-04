@@ -1220,7 +1220,7 @@ html {
     z-index: 2;
 }
 
-.section-badge {
+.nri-section .section-badge {
     display: inline-block !important;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15)) !important;
     color: #ffffff !important;
@@ -1953,5 +1953,167 @@ html {
     .info-box,
     .content-text {
         width: 100% !important;
+    }
+}
+
+/* ===================================
+   HEADER & HERO LAYOUT FIXES
+   =================================== */
+
+/* 1. Make navbar persistent (fixed to top) */
+.navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1020 !important;
+}
+
+/* Push all page content below the fixed navbar using body padding */
+body {
+    padding-top: 76px !important;
+}
+
+/* 2. Nav menu in single row - reduce gap and link sizing (desktop only) */
+@media (min-width: 769px) {
+    .nav-menu {
+        gap: 4px !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .nav-menu > li > a {
+        font-size: 0.85rem !important;
+        padding: 6px 8px !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-cta .btn {
+        font-size: 0.8rem !important;
+        padding: 8px 12px !important;
+        white-space: nowrap !important;
+    }
+
+    .logo-img {
+        height: 50px !important;
+    }
+}
+
+/* 3. Hero section - fit within viewport on all screens */
+.hero {
+    min-height: calc(100dvh - 76px) !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: var(--spacing-8) 0 !important;
+}
+
+.hero .container {
+    width: 100%;
+}
+
+.hero-content {
+    gap: var(--spacing-6) !important;
+}
+
+.hero-title {
+    font-size: clamp(1.75rem, 3.5vw, 3.5rem) !important;
+    margin-bottom: var(--spacing-3) !important;
+}
+
+.hero-subtitle {
+    margin-bottom: var(--spacing-4) !important;
+}
+
+.trust-badges {
+    margin-bottom: var(--spacing-6) !important;
+}
+
+/* === Responsive adjustments for hero viewport fit === */
+
+/* Tablets and smaller desktops */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .nav-menu {
+        gap: 2px !important;
+    }
+
+    .nav-menu > li > a {
+        font-size: 0.8rem !important;
+        padding: 6px 6px !important;
+    }
+
+    .nav-cta .btn {
+        font-size: 0.75rem !important;
+        padding: 6px 10px !important;
+    }
+
+    .hero {
+        padding: var(--spacing-6) 0 !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    body {
+        padding-top: 64px !important;
+    }
+
+    .hero {
+        min-height: calc(100dvh - 64px) !important;
+        padding: var(--spacing-6) 0 !important;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 5vw, 2rem) !important;
+        margin-bottom: var(--spacing-2) !important;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem !important;
+        margin-bottom: var(--spacing-3) !important;
+    }
+
+    .hero-badge {
+        font-size: 0.7rem !important;
+        padding: 6px 14px !important;
+        margin-bottom: var(--spacing-3) !important;
+    }
+
+    .trust-badges {
+        margin-bottom: var(--spacing-4) !important;
+        gap: var(--spacing-2) !important;
+    }
+
+    .badge-item {
+        padding: 6px 12px !important;
+        font-size: 0.8rem !important;
+    }
+
+    .hero-ctas {
+        gap: var(--spacing-2) !important;
+    }
+
+    .hero-ctas .btn {
+        padding: 10px 16px !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Short viewport screens (laptops with small height) */
+@media (max-height: 700px) {
+    .hero {
+        padding: var(--spacing-4) 0 !important;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 3vw, 2.5rem) !important;
+    }
+
+    .trust-badges {
+        margin-bottom: var(--spacing-4) !important;
+    }
+
+    .badge-item {
+        padding: 4px 10px !important;
+        font-size: 0.8rem !important;
     }
 }
