@@ -19,7 +19,21 @@ Allow: /Images/
 # Sitemap location
 Sitemap: https://jaipureyedental.com/sitemap.xml
 
-# Crawl-delay (optional - adjust if needed)
-# Crawl-delay: 1
+# AI Crawler Directives - Explicitly allow AI crawlers
+User-agent: GPTBot
+Allow: /
 
+User-agent: ClaudeBot
+Allow: /
 
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# LLMs.txt for AI systems
+# See: https://jaipureyedental.com/llms.txt
