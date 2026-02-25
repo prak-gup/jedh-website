@@ -20,11 +20,11 @@
     <meta property="og:description" content="Lasik (Bladeless) & PRK laser eye surgery in Jaipur. Bladefree procedure. Clear vision without glasses. ₹35,000-₹70,000 per eye. Free screening.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jaipureyedental.com/eye/lasik-prk">
-    <meta property="og:image" content="https://jaipureyedental.com/assets/images/JEDH Logo.png">
+    <meta property="og:image" content="https://jaipureyedental.com/assets/images/JEDH-Logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lasik (Bladeless) & PRK Laser Eye Surgery in Jaipur | From ₹35,000 per eye | JEDH">
     <meta name="twitter:description" content="Lasik (Bladeless) & PRK laser eye surgery in Jaipur. Bladefree procedure. Clear vision without glasses.">
-    <meta name="twitter:image" content="https://jaipureyedental.com/assets/images/JEDH Logo.png">
+    <meta name="twitter:image" content="https://jaipureyedental.com/assets/images/JEDH-Logo.png">
     <title>LASIK & PRK Laser Eye Surgery Jaipur | From ₹35k</title>
     <link rel="canonical" href="https://jaipureyedental.com/eye/lasik-prk">
     
@@ -106,6 +106,7 @@
     {
       "@context": "https://schema.org",
       "@type": "MedicalProcedure",
+      "@id": "https://jaipureyedental.com/eye/lasik-prk/#procedure",
       "name": "LASIK (Bladeless) and PRK Surgery",
       "description": "Bladeless laser eye surgery for vision correction in Jaipur at JEDH. Options include Femto LASIK, PRK/TransPRK, and Contoura Vision topography-guided LASIK. 5,000+ successful procedures.",
       "procedureType": "https://schema.org/SurgicalProcedure",
@@ -115,10 +116,7 @@
       "followup": "Multiple post-operative checkups over 3-6 months",
       "status": "https://schema.org/EventScheduled",
       "provider": {
-        "@type": "MedicalBusiness",
-        "name": "Jaipur Eye & Dental Hospital",
-        "telephone": "+917976551251",
-        "url": "https://jaipureyedental.com"
+        "@id": "https://jaipureyedental.com/#organization"
       },
       "offers": {
         "@type": "AggregateOffer",
@@ -198,6 +196,59 @@
       ]
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How LASIK Eye Surgery Is Performed at JEDH Jaipur",
+      "description": "Step-by-step guide to the bladeless LASIK eye surgery procedure at Jaipur Eye & Dental Hospital, from initial consultation to post-operative recovery.",
+      "totalTime": "PT2H",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": "35000-70000"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Pre-Operative Evaluation",
+          "text": "Comprehensive eye examination including corneal topography, pachymetry (corneal thickness measurement), wavefront analysis, dry eye assessment, and pupil dilation. This determines your candidacy and the optimal laser profile for your eyes."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Preparation on Surgery Day",
+          "text": "Numbing eye drops are applied to ensure a painless experience. The area around your eye is cleaned and a lid speculum is placed to keep your eye open during the procedure."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Corneal Flap Creation",
+          "text": "A femtosecond laser creates a thin, precise flap on the corneal surface. This bladeless approach is safer and more accurate than traditional microkeratome methods."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Laser Corneal Reshaping",
+          "text": "The flap is gently lifted and an excimer laser reshapes the underlying corneal tissue based on your prescription. For Contoura Vision, topography-guided mapping ensures personalized treatment. The laser takes 30-60 seconds per eye."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Flap Repositioning",
+          "text": "The corneal flap is carefully repositioned. It adheres naturally without stitches. The surgeon verifies proper alignment under the surgical microscope."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Post-Operative Recovery",
+          "text": "Protective eye shields are placed. You rest for 15-30 minutes at the hospital. Most patients notice improved vision within hours. Follow-up visits are scheduled at 1 day, 1 week, 1 month, and 3 months post-surgery."
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Top Bar -->
@@ -224,7 +275,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <a href="../index.html"><img src="../assets/images/JEDH Logo.png" alt="JEDH Logo" class="logo-img" width="200" height="60" fetchpriority="high" loading="eager"></a>
+                    <a href="../index.html"><img src="../assets/images/JEDH-Logo.png" alt="JEDH Logo" class="logo-img" width="200" height="60" fetchpriority="high" loading="eager"></a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
@@ -323,6 +374,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Medical Review Badge -->
+    <div class="container" style="padding-top: 1rem;">
+        <p style="font-size: 0.85rem; color: var(--color-neutral-500); text-align: center; margin: 0;">
+            <i class="fas fa-user-md"></i> Medically reviewed by <strong>Dr. Amit Gupta, MS Ophthalmology</strong> — Last updated February 2026
+        </p>
+    </div>
 
     <!-- LASIK vs PRK Comparison -->
     <section class="content-section">
