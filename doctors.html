@@ -115,6 +115,17 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jaipureyedental.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Our Doctors", "item": "https://jaipureyedental.com/doctors"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
       "@type": "MedicalOrganization",
       "name": "Jaipur Eye & Dental Hospital",
       "description": "Expert eye and dental care specialists in Jaipur with 15+ years experience",
@@ -142,39 +153,73 @@
       ],
       "employee": [
         {
-          "@type": "Person",
+          "@type": "Physician",
           "name": "Dr. Amit Gupta",
-          "jobTitle": "MS Ophthalmology, Eye Surgeon & Medical Director",
+          "jobTitle": "Eye Surgeon & Medical Director",
+          "medicalSpecialty": "Ophthalmology",
           "image": "https://jaipureyedental.com/Images/Dr Amit Gupta.JPEG",
-          "description": "7+ years experience in eye surgery, 10,000+ successful surgeries"
+          "description": "Dr. Amit Gupta is a MS Ophthalmology qualified eye surgeon and Medical Director at JEDH with 7+ years of experience and 10,000+ successful surgeries including cataract, LASIK, and glaucoma procedures.",
+          "qualifications": "MS Ophthalmology, Fellowship in Phacoemulsification",
+          "alumniOf": [
+            {
+              "@type": "EducationalOrganization",
+              "name": "GMC Aurangabad (MBBS)"
+            },
+            {
+              "@type": "EducationalOrganization",
+              "name": "SMS Medical College, Jaipur (MS Ophthalmology)"
+            }
+          ],
+          "url": "https://jaipureyedental.com/doctors.html"
         },
         {
-          "@type": "Person",
+          "@type": "Physician",
           "name": "Dr. Nehal Gupta",
-          "jobTitle": "Senior Dental Surgeon, MDS Prosthodontics",
+          "jobTitle": "Senior Dental Surgeon",
+          "medicalSpecialty": "Dentistry",
           "image": "https://jaipureyedental.com/Images/Dr Nehal Gupta.JPEG",
-          "description": "15+ years experience in dental surgery, 5,000+ happy patients"
+          "description": "Dr. Nehal Gupta is a MDS Prosthodontics and Implantology specialist with 15+ years of experience in dental implants, cosmetic dentistry, and smile makeovers. 5,000+ happy patients treated.",
+          "qualifications": "MDS Prosthodontics, Implantology",
+          "url": "https://jaipureyedental.com/doctors.html"
         },
         {
-          "@type": "Person",
+          "@type": "Physician",
+          "name": "Dr. Neha Agarwal",
+          "jobTitle": "Oral & Maxillofacial Surgeon",
+          "medicalSpecialty": "Dentistry",
+          "description": "Dr. Neha Agarwal is a MDS Oral & Maxillofacial Surgery specialist with 12+ years of experience in wisdom tooth extraction, jaw surgery, and facial trauma procedures. 3,000+ successful procedures.",
+          "qualifications": "MDS Oral & Maxillofacial Surgery",
+          "url": "https://jaipureyedental.com/doctors.html"
+        },
+        {
+          "@type": "Physician",
           "name": "Dr. Kapil Bhatia",
-          "jobTitle": "Retina Specialist, MS Ophthalmology",
+          "jobTitle": "Retina Specialist",
+          "medicalSpecialty": "Ophthalmology",
           "image": "https://jaipureyedental.com/Images/Dr. Kapil Bhatia.jpeg",
-          "description": "13+ years experience in retinal procedures, 3,500+ retinal procedures"
+          "description": "Dr. Kapil Bhatia is a MS Ophthalmology qualified retina specialist with 13+ years of experience in diabetic retinopathy, retinal detachment, and macular disorder treatments. 3,500+ retinal procedures.",
+          "qualifications": "MS Ophthalmology, Fellowship in Retina",
+          "url": "https://jaipureyedental.com/doctors.html"
         },
         {
-          "@type": "Person",
+          "@type": "Physician",
           "name": "Dr. Manju Meena",
-          "jobTitle": "Oculoplastic Surgeon, MS Ophthalmology",
+          "jobTitle": "Oculoplastic Surgeon",
+          "medicalSpecialty": "Ophthalmology",
           "image": "https://jaipureyedental.com/Images/Dr. Manju Meena.jpeg",
-          "description": "14+ years experience in oculoplastic surgery, 4,000+ successful procedures"
+          "description": "Dr. Manju Meena is a MS Ophthalmology qualified oculoplastic surgeon with 14+ years of experience in eyelid surgery, tear duct surgery, and orbital procedures. 4,000+ successful procedures.",
+          "qualifications": "MS Ophthalmology, Fellowship in Oculoplasty",
+          "url": "https://jaipureyedental.com/doctors.html"
         },
         {
-          "@type": "Person",
+          "@type": "Physician",
           "name": "Dr. Siddharth Mehta",
-          "jobTitle": "MDS Orthodontics, Invisalign Specialist",
+          "jobTitle": "Orthodontist & Invisalign Specialist",
+          "medicalSpecialty": "Dentistry",
           "image": "https://jaipureyedental.com/Images/Dr. Siddharth Mehta.jpeg",
-          "description": "10+ years experience in orthodontics, 2,000+ smile transformations"
+          "description": "Dr. Siddharth Mehta is a MDS Orthodontics qualified specialist and certified Invisalign provider with 10+ years of experience in orthodontics. 2,000+ smile transformations.",
+          "qualifications": "MDS Orthodontics, Invisalign Certified",
+          "url": "https://jaipureyedental.com/doctors.html"
         }
       ]
     }
@@ -1132,8 +1177,11 @@
                 </div>
             </div>
 
+            <div class="medical-disclaimer" style="text-align: center; padding: 1rem 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.6);">
+                <p>Medical Disclaimer: The information on this website is for general informational purposes only and does not constitute medical advice. Individual results may vary. Always consult a qualified healthcare provider for diagnosis and treatment decisions.</p>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Jaipur Eye & Dental Hospital. All rights reserved.</p>
+                <p>&copy; 2026 Jaipur Eye & Dental Hospital. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="privacy-policy">Privacy Policy</a>
                     <a href="terms-conditions">Terms & Conditions</a>

@@ -108,22 +108,95 @@
       "@context": "https://schema.org",
       "@type": "MedicalProcedure",
       "name": "Cataract Surgery",
-      "description": "Advanced phaco and femto cataract surgery in Jaipur",
-      "procedureType": "Surgical",
+      "description": "Advanced phaco and femto cataract surgery in Jaipur at JEDH. Painless procedure with premium lens options (Monofocal, Toric, Multifocal, EDOF). 10,000+ successful surgeries by experienced ophthalmologists.",
+      "procedureType": "https://schema.org/SurgicalProcedure",
       "bodyLocation": "Eye",
-      "preparation": "Eye evaluation, measurements, and medical history review",
-      "howPerformed": "Phacoemulsification or Femtosecond laser-assisted surgery",
-      "followup": "Multiple post-operative checkups",
+      "preparation": "Eye evaluation, biometry measurements, and medical history review",
+      "howPerformed": "Phacoemulsification or Femtosecond laser-assisted surgery with intraocular lens implantation",
+      "followup": "Multiple post-operative checkups over 4-6 weeks",
+      "status": "https://schema.org/EventScheduled",
       "provider": {
         "@type": "MedicalBusiness",
         "name": "Jaipur Eye & Dental Hospital",
-        "telephone": "+917976551251"
+        "telephone": "+917976551251",
+        "url": "https://jaipureyedental.com"
       },
       "offers": {
-        "@type": "Offer",
-        "priceRange": "₹18,000 - ₹125,000",
-        "priceCurrency": "INR"
+        "@type": "AggregateOffer",
+        "priceCurrency": "INR",
+        "lowPrice": "18000",
+        "highPrice": "125000",
+        "offerCount": "5"
       }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jaipureyedental.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Eye Care", "item": "https://jaipureyedental.com/eye/"},
+        {"@type": "ListItem", "position": 3, "name": "Cataract Surgery", "item": "https://jaipureyedental.com/eye/cataract-surgery"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is cataract surgery painful?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The procedure is performed under local anesthesia (eye drops). You may feel slight pressure but no pain. Most patients are surprised at how comfortable the experience is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can cataract come back after surgery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, cataracts cannot return. However, some patients may develop posterior capsule opacification (PCO), which can be easily treated with a quick laser procedure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does cataract surgery take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The actual surgery takes 10-15 minutes per eye. Including preparation and post-op observation, plan for 2-3 hours at the hospital."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When can I resume normal activities after cataract surgery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Light activities: Next day. Reading/TV: 2-3 days. Cooking/office work: 3-4 days. Exercise: 2 weeks. Swimming: 4 weeks. Your doctor will provide specific guidance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is insurance accepted for cataract surgery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We accept cashless treatment for RGHS, CGHS, and most major insurance providers. Our staff will help with paperwork and approval."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to get both eyes done together for cataract surgery?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We typically perform surgery on one eye first, wait for 1-2 weeks for healing, then do the second eye. This is safer and allows you to adapt gradually."
+          }
+        }
+      ]
     }
     </script>
 </head>
@@ -348,7 +421,7 @@
 
                 <div class="lens-card">
                     <h3>Toric IOL</h3>
-                    <div class="lens-price">₹35,000 - ₹50,000</div>
+                    <div class="lens-price">₹65,000 - ₹85,000</div>
                     <p>Corrects astigmatism along with cataract. Reduces dependency on glasses.</p>
                     <ul class="lens-features">
                         <li><i class="fas fa-check"></i> Corrects astigmatism</li>
@@ -580,8 +653,11 @@
                     </ul>
                 </div>
             </div>
+            <div class="medical-disclaimer" style="text-align: center; padding: 1rem 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.6);">
+                <p>Medical Disclaimer: The information on this website is for general informational purposes only and does not constitute medical advice. Individual results may vary. Always consult a qualified healthcare provider for diagnosis and treatment decisions.</p>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Jaipur Eye & Dental Hospital. All rights reserved.</p>
+                <p>&copy; 2026 Jaipur Eye & Dental Hospital. All rights reserved.</p>
                 <div class="footer-links">
                     <a href="privacy-policy">Privacy Policy</a>
                     <a href="terms-conditions">Terms & Conditions</a>
