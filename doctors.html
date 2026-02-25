@@ -20,14 +20,14 @@
     <meta property="og:description" content="Meet our team of highly qualified eye and dental specialists">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jaipureyedental.com/doctors">
-    <meta property="og:image" content="https://jaipureyedental.com/assets/images/JEDH Logo.png">
+    <meta property="og:image" content="https://jaipureyedental.com/assets/images/JEDH-Logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="JEDH Expert Doctors - Eye and Dental Specialists in Jaipur">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Our Expert Doctors | Jaipur Eye & Dental Hospital">
     <meta name="twitter:description" content="Meet our team of highly qualified eye and dental specialists">
-    <meta name="twitter:image" content="https://jaipureyedental.com/assets/images/JEDH Logo.png">
+    <meta name="twitter:image" content="https://jaipureyedental.com/assets/images/JEDH-Logo.png">
 
     <title>Our Expert Doctors | JEDH - Jaipur Eye & Dental Hospital</title>
 
@@ -127,16 +127,23 @@
     {
       "@context": "https://schema.org",
       "@type": "MedicalOrganization",
+      "@id": "https://jaipureyedental.com/#organization",
       "name": "Jaipur Eye & Dental Hospital",
       "description": "Expert eye and dental care specialists in Jaipur with 15+ years experience",
       "url": "https://jaipureyedental.com/doctors",
-      "logo": "https://jaipureyedental.com/assets/images/JEDH Logo.png",
-      "image": "https://jaipureyedental.com/assets/images/JEDH Logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://jaipureyedental.com/#logo",
+        "url": "https://jaipureyedental.com/assets/images/JEDH-Logo.png"
+      },
+      "image": "https://jaipureyedental.com/assets/images/JEDH-Logo.png",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Plot No. 1, Near Vidhan Sabha, Lalkothi",
         "addressLocality": "Jaipur",
         "addressRegion": "Rajasthan",
-        "addressCountry": "India"
+        "postalCode": "302015",
+        "addressCountry": "IN"
       },
       "telephone": "+91-7976551251",
       "email": "dramit.eye@gmail.com",
@@ -154,6 +161,7 @@
       "employee": [
         {
           "@type": "Physician",
+          "@id": "https://jaipureyedental.com/doctors/#dr-amit-gupta",
           "name": "Dr. Amit Gupta",
           "jobTitle": "Eye Surgeon & Medical Director",
           "medicalSpecialty": "Ophthalmology",
@@ -170,55 +178,69 @@
               "name": "SMS Medical College, Jaipur (MS Ophthalmology)"
             }
           ],
-          "url": "https://jaipureyedental.com/doctors.html"
+          "worksFor": { "@id": "https://jaipureyedental.com/#organization" },
+          "url": "https://jaipureyedental.com/doctors.html",
+          "sameAs": [
+            "https://www.linkedin.com/in/dr-amit-gupta-1938985b/"
+          ]
         },
         {
           "@type": "Physician",
+          "@id": "https://jaipureyedental.com/doctors/#dr-nehal-gupta",
           "name": "Dr. Nehal Gupta",
           "jobTitle": "Senior Dental Surgeon",
           "medicalSpecialty": "Dentistry",
           "image": "https://jaipureyedental.com/Images/Dr Nehal Gupta.JPEG",
           "description": "Dr. Nehal Gupta is a MDS Prosthodontics and Implantology specialist with 15+ years of experience in dental implants, cosmetic dentistry, and smile makeovers. 5,000+ happy patients treated.",
           "qualifications": "MDS Prosthodontics, Implantology",
+          "worksFor": { "@id": "https://jaipureyedental.com/#organization" },
           "url": "https://jaipureyedental.com/doctors.html"
         },
         {
           "@type": "Physician",
+          "@id": "https://jaipureyedental.com/doctors/#dr-neha-agarwal",
           "name": "Dr. Neha Agarwal",
           "jobTitle": "Oral & Maxillofacial Surgeon",
           "medicalSpecialty": "Dentistry",
           "description": "Dr. Neha Agarwal is a MDS Oral & Maxillofacial Surgery specialist with 12+ years of experience in wisdom tooth extraction, jaw surgery, and facial trauma procedures. 3,000+ successful procedures.",
           "qualifications": "MDS Oral & Maxillofacial Surgery",
+          "worksFor": { "@id": "https://jaipureyedental.com/#organization" },
           "url": "https://jaipureyedental.com/doctors.html"
         },
         {
           "@type": "Physician",
+          "@id": "https://jaipureyedental.com/doctors/#dr-kapil-bhatia",
           "name": "Dr. Kapil Bhatia",
           "jobTitle": "Retina Specialist",
           "medicalSpecialty": "Ophthalmology",
           "image": "https://jaipureyedental.com/Images/Dr. Kapil Bhatia.jpeg",
           "description": "Dr. Kapil Bhatia is a MS Ophthalmology qualified retina specialist with 13+ years of experience in diabetic retinopathy, retinal detachment, and macular disorder treatments. 3,500+ retinal procedures.",
           "qualifications": "MS Ophthalmology, Fellowship in Retina",
+          "worksFor": { "@id": "https://jaipureyedental.com/#organization" },
           "url": "https://jaipureyedental.com/doctors.html"
         },
         {
           "@type": "Physician",
+          "@id": "https://jaipureyedental.com/doctors/#dr-manju-meena",
           "name": "Dr. Manju Meena",
           "jobTitle": "Oculoplastic Surgeon",
           "medicalSpecialty": "Ophthalmology",
           "image": "https://jaipureyedental.com/Images/Dr. Manju Meena.jpeg",
           "description": "Dr. Manju Meena is a MS Ophthalmology qualified oculoplastic surgeon with 14+ years of experience in eyelid surgery, tear duct surgery, and orbital procedures. 4,000+ successful procedures.",
           "qualifications": "MS Ophthalmology, Fellowship in Oculoplasty",
+          "worksFor": { "@id": "https://jaipureyedental.com/#organization" },
           "url": "https://jaipureyedental.com/doctors.html"
         },
         {
           "@type": "Physician",
+          "@id": "https://jaipureyedental.com/doctors/#dr-siddharth-mehta",
           "name": "Dr. Siddharth Mehta",
           "jobTitle": "Orthodontist & Invisalign Specialist",
           "medicalSpecialty": "Dentistry",
           "image": "https://jaipureyedental.com/Images/Dr. Siddharth Mehta.jpeg",
           "description": "Dr. Siddharth Mehta is a MDS Orthodontics qualified specialist and certified Invisalign provider with 10+ years of experience in orthodontics. 2,000+ smile transformations.",
           "qualifications": "MDS Orthodontics, Invisalign Certified",
+          "worksFor": { "@id": "https://jaipureyedental.com/#organization" },
           "url": "https://jaipureyedental.com/doctors.html"
         }
       ]
@@ -734,7 +756,7 @@
             <div class="nav-wrapper">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="assets/images/JEDH Logo.png" alt="JEDH Logo" class="logo-img" width="200" height="60" fetchpriority="high" loading="eager">
+                        <img src="assets/images/JEDH-Logo.png" alt="JEDH Logo" class="logo-img" width="200" height="60" fetchpriority="high" loading="eager">
                     </a>
                 </div>
                 <ul class="nav-menu">

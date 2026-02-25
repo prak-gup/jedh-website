@@ -98,3 +98,8 @@ jedh-theme/
 *.docx
 *.json
 *.xml
+
+# But keep sitemap files
+!sitemap.xml
+!sitemap-main.xml
+!sitemap-blog.xml

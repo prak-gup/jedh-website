@@ -20,12 +20,12 @@
     <meta property="og:description" content="Advanced cataract surgery in Jaipur. Phaco & Femto lasik. Premium lenses available. Painless procedure. ₹18,000-₹1.25 lakh. Book evaluation today.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jaipureyedental.com/eye/cataract-surgery">
-    <meta property="og:image" content="https://jaipureyedental.com/assets/images/JEDH Logo.png">
+    <meta property="og:image" content="https://jaipureyedental.com/assets/images/JEDH-Logo.png">
     <meta property="og:image:alt" content="Cataract Surgery at JEDH Jaipur">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cataract Surgery in Jaipur | Phaco & Femto | From ₹18,000 | JEDH">
     <meta name="twitter:description" content="Advanced cataract surgery in Jaipur. Phaco & Femto lasik. Premium lenses available. Painless procedure.">
-    <meta name="twitter:image" content="https://jaipureyedental.com/assets/images/JEDH Logo.png">
+    <meta name="twitter:image" content="https://jaipureyedental.com/assets/images/JEDH-Logo.png">
     <title>Cataract Surgery Jaipur | Phaco & Femto | From ₹18k</title>
     <link rel="canonical" href="https://jaipureyedental.com/eye/cataract-surgery">
     
@@ -107,6 +107,7 @@
     {
       "@context": "https://schema.org",
       "@type": "MedicalProcedure",
+      "@id": "https://jaipureyedental.com/eye/cataract-surgery/#procedure",
       "name": "Cataract Surgery",
       "description": "Advanced phaco and femto cataract surgery in Jaipur at JEDH. Painless procedure with premium lens options (Monofocal, Toric, Multifocal, EDOF). 10,000+ successful surgeries by experienced ophthalmologists.",
       "procedureType": "https://schema.org/SurgicalProcedure",
@@ -116,10 +117,7 @@
       "followup": "Multiple post-operative checkups over 4-6 weeks",
       "status": "https://schema.org/EventScheduled",
       "provider": {
-        "@type": "MedicalBusiness",
-        "name": "Jaipur Eye & Dental Hospital",
-        "telephone": "+917976551251",
-        "url": "https://jaipureyedental.com"
+        "@id": "https://jaipureyedental.com/#organization"
       },
       "offers": {
         "@type": "AggregateOffer",
@@ -199,6 +197,59 @@
       ]
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How Cataract Surgery Is Performed at JEDH Jaipur",
+      "description": "Step-by-step guide to phacoemulsification cataract surgery at Jaipur Eye & Dental Hospital, from pre-operative assessment to post-operative recovery.",
+      "totalTime": "PT3H",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": "18000-125000"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Pre-Operative Assessment",
+          "text": "Comprehensive eye evaluation including biometry measurements to determine the correct intraocular lens (IOL) power, medical history review, and discussion of lens options (Monofocal, Toric, Multifocal, EDOF)."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Anesthesia and Preparation",
+          "text": "Topical numbing eye drops are applied — no injections needed. The eye area is cleaned and draped. A lid speculum holds the eye open comfortably."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Micro-Incision Creation",
+          "text": "A tiny 2.2mm incision is made at the edge of the cornea. For femtosecond laser-assisted surgery, the laser creates the incision and softens the cataract before removal."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Cataract Removal (Phacoemulsification)",
+          "text": "An ultrasonic probe breaks the cloudy lens into tiny fragments which are gently suctioned out. This phacoemulsification technique requires no stitches and enables faster healing."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Intraocular Lens Implantation",
+          "text": "A foldable IOL is inserted through the micro-incision and positioned in the natural lens capsule. The lens unfolds and centers itself. The incision self-seals without sutures."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Post-Operative Recovery",
+          "text": "A protective eye shield is placed. You rest for 30-60 minutes. Most patients see noticeable improvement within 24 hours. Follow-up checkups are at 1 day, 1 week, and 4-6 weeks post-surgery."
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Top Bar -->
@@ -225,7 +276,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <a href="../index.html"><img src="../assets/images/JEDH Logo.png" alt="JEDH Logo" class="logo-img" width="200" height="60" fetchpriority="high" loading="eager"></a>
+                    <a href="../index.html"><img src="../assets/images/JEDH-Logo.png" alt="JEDH Logo" class="logo-img" width="200" height="60" fetchpriority="high" loading="eager"></a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
@@ -324,6 +375,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Medical Review Badge -->
+    <div class="container" style="padding-top: 1rem;">
+        <p style="font-size: 0.85rem; color: var(--color-neutral-500); text-align: center; margin: 0;">
+            <i class="fas fa-user-md"></i> Medically reviewed by <strong>Dr. Amit Gupta, MS Ophthalmology</strong> — Last updated February 2026
+        </p>
+    </div>
 
     <!-- What is Cataract -->
     <section class="content-section">

@@ -20,7 +20,7 @@
     <meta property="og:description" content="JEDH offers comprehensive eye and dental care in Jaipur since 2017. 20k+ patients. Book same-week consultation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jaipureyedental.com/">
-    <meta property="og:image" content="https://jaipureyedental.com/assets/images/JEDH Logo.png">
+    <meta property="og:image" content="https://jaipureyedental.com/assets/images/JEDH-Logo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Jaipur Eye & Dental Hospital - Best Eye Care & Dental Clinic in Jaipur">
@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Jaipur Eye & Dental Hospital | Best Eye Care & Dental Clinic in Jaipur">
     <meta name="twitter:description" content="JEDH offers comprehensive eye and dental care in Jaipur since 2017. 20k+ patients. Book same-week consultation.">
-    <meta name="twitter:image" content="https://jaipureyedental.com/assets/images/JEDH Logo.png">
+    <meta name="twitter:image" content="https://jaipureyedental.com/assets/images/JEDH-Logo.png">
     <meta name="twitter:image:alt" content="Jaipur Eye & Dental Hospital - Best Eye Care & Dental Clinic in Jaipur">
 
     <title>JEDH Jaipur | Best Eye & Dental Care Hospital Since 2017</title>
@@ -122,14 +122,21 @@
     {
       "@context": "https://schema.org",
       "@type": ["MedicalBusiness", "LocalBusiness"],
+      "@id": "https://jaipureyedental.com/#organization",
       "name": "Jaipur Eye & Dental Hospital",
       "alternateName": "JEDH",
       "description": "Comprehensive eye and dental care in Jaipur since 2017. Services include cataract surgery, LASIK, dental implants, Invisalign, glaucoma treatment, and cosmetic dentistry. Led by MS and MDS qualified specialists with 20,000+ patients treated.",
       "url": "https://jaipureyedental.com",
       "telephone": "+917976551251",
       "email": "dramit.eye@gmail.com",
-      "logo": "https://jaipureyedental.com/assets/images/JEDH Logo.png",
-      "image": "https://jaipureyedental.com/assets/images/JEDH Logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://jaipureyedental.com/#logo",
+        "url": "https://jaipureyedental.com/assets/images/JEDH-Logo.png",
+        "width": "200",
+        "height": "60"
+      },
+      "image": "https://jaipureyedental.com/assets/images/JEDH-Logo.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Plot No. 1, Near Vidhan Sabha, Lalkothi",
@@ -201,7 +208,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <img src="assets/images/JEDH Logo.png" alt="JEDH Logo" class="logo-img" width="200" height="60" fetchpriority="high" loading="eager">
+                    <img src="assets/images/JEDH-Logo.png" alt="JEDH Logo" class="logo-img" width="200" height="60" fetchpriority="high" loading="eager">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="active">Home</a></li>
