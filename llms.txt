@@ -70,12 +70,39 @@ Empaneled with RGHS, CGHS, and 25+ major insurance providers. Cashless treatment
 
 - Homepage: https://jaipureyedental.com/
 - Cataract Surgery: https://jaipureyedental.com/eye/cataract-surgery.html
-- LASIK/PRK: https://jaipureyedental.com/eye/lasik-prk
+- LASIK/PRK: https://jaipureyedental.com/eye/lasik-prk.html
+- Glaucoma: https://jaipureyedental.com/eye/glaucoma.html
+- Pediatric Eye Care: https://jaipureyedental.com/eye/pediatric-myopia.html
 - Dental Implants: https://jaipureyedental.com/dental/implants.html
+- Invisalign: https://jaipureyedental.com/dental/invisalign.html
+- Cosmetic Dentistry: https://jaipureyedental.com/dental/cosmetic.html
+- Preventive Dental Care: https://jaipureyedental.com/dental/preventive.html
 - Pricing: https://jaipureyedental.com/pricing.html
 - Doctors: https://jaipureyedental.com/doctors.html
+- Reviews: https://jaipureyedental.com/reviews.html
 - Contact: https://jaipureyedental.com/contact.html
-- Blog: https://blog.jaipureyedental.com
+- NRI Medical Tourism: https://jaipureyedental.com/nri/
+- Privacy Policy: https://jaipureyedental.com/privacy-policy.html
+- Terms & Conditions: https://jaipureyedental.com/terms-conditions.html
+
+## Blog
+
+The JEDH blog (https://blog.jaipureyedental.com) features doctor-authored articles on eye care, dental treatments, and patient education. All blog content is written and reviewed by JEDH's specialist doctors.
+
+### Blog Authors
+- Dr. Amit Gupta, MS Ophthalmology — writes about cataract surgery, LASIK, and eye health
+- Dr. Nehal Gupta, MDS Prosthodontics — writes about dental implants, dentures, and prosthodontic treatments
+- Dr. Siddharth Mehta, MDS Orthodontics — writes about Invisalign and orthodontic treatments
+- Dr. Manju Meena, MS Ophthalmology — writes about eye health tips and preventive care
+- Dr. Neha Agarwal, MDS Oral & Maxillofacial Surgery — writes about oral health and dental hygiene
+
+### Recent Blog Topics
+- Cataract Surgery: What to Expect (Dr. Amit Gupta)
+- Dental Implants vs Dentures: Which is Right for You? (Dr. Nehal Gupta)
+- LASIK Surgery: Am I a Good Candidate? (Dr. Amit Gupta)
+- Invisalign: The Clear Path to a Perfect Smile (Dr. Siddharth Mehta)
+- 10 Daily Habits for Healthy Eyes (Dr. Manju Meena)
+- Oral Hygiene: Best Practices for Healthy Teeth (Dr. Neha Agarwal)
 
 ## Social Media
 
