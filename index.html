@@ -48,20 +48,20 @@
     <style>
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{font-family:var(--font-family-primary);font-size:var(--font-size-base);line-height:var(--line-height-normal);color:var(--color-neutral-900);background:var(--color-neutral-0);overflow-x:hidden;padding-top:76px}
+    body{font-family:var(--font-family-primary);font-size:var(--font-size-base);line-height:var(--line-height-normal);color:var(--color-neutral-900);background:var(--color-neutral-0);overflow-x:hidden;padding-top:112px}
     .container{max-width:var(--container-max-width);margin:0 auto;padding:0 var(--spacing-6)}
     h1,h2,h3,h4,h5,h6{font-family:var(--font-family-secondary);font-weight:var(--font-weight-semibold);line-height:var(--line-height-tight);margin-bottom:var(--spacing-4)}
     h1{font-size:clamp(2rem,5vw,3.5rem)}
     h2{font-size:clamp(1.75rem,4vw,2.5rem)}
     img{max-width:100%;height:auto;display:block}
-    .top-bar{background:var(--color-neutral-900);color:var(--color-neutral-0);padding:var(--spacing-2) 0;font-size:var(--font-size-sm)}
+    .top-bar{background:var(--color-neutral-900);color:var(--color-neutral-0);padding:var(--spacing-2) 0;font-size:var(--font-size-sm);position:fixed;top:0;left:0;right:0;z-index:1021}
     .top-bar-content{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--spacing-4)}
     .top-bar-left,.top-bar-right{display:flex;align-items:center;gap:var(--spacing-6)}
     .top-bar span{display:flex;align-items:center;gap:var(--spacing-2)}
     .language-switch{display:flex;gap:var(--spacing-1)}
     .lang-btn{background:transparent;color:var(--color-neutral-0);border:1px solid rgba(255,255,255,0.3);padding:var(--spacing-1) var(--spacing-3);border-radius:var(--radius-sm);cursor:pointer;font-size:var(--font-size-sm);transition:all var(--duration-base) var(--timing-ease)}
     .lang-btn.active,.lang-btn:hover{background:var(--color-primary-500);border-color:var(--color-primary-500)}
-    .navbar{background:var(--color-neutral-0);box-shadow:var(--shadow-sm);position:fixed;top:0;left:0;right:0;width:100%;z-index:1020}
+    .navbar{background:var(--color-neutral-0);box-shadow:var(--shadow-sm);position:fixed;top:36px;left:0;right:0;width:100%;z-index:1020}
     .nav-wrapper{display:flex;align-items:center;justify-content:space-between;padding:var(--spacing-4) 0}
     .logo-img{height:60px;width:auto}
     .nav-menu{display:flex;list-style:none;gap:4px;align-items:center;flex-wrap:nowrap}
@@ -69,7 +69,7 @@
     .nav-menu a:hover,.nav-menu a.active{color:var(--color-primary-500)}
     .mobile-menu-toggle{display:none;flex-direction:column;gap:5px;background:transparent;border:none;cursor:pointer;padding:var(--spacing-3);min-width:var(--touch-target-min);min-height:var(--touch-target-min);justify-content:center;align-items:center;z-index:calc(var(--z-index-sticky) + 1);position:relative}
     .mobile-menu-toggle span{display:block;width:28px;height:3px;background:var(--color-neutral-900);border-radius:var(--radius-full);transition:all var(--duration-base) var(--timing-ease);transform-origin:center}
-    .hero{padding:var(--spacing-8) 0;min-height:calc(100dvh - 76px);display:flex;align-items:center;background:linear-gradient(135deg,#1a365d 0%,#1e4a7a 25%,#0066CC 60%,#0052A3 100%);position:relative;overflow:hidden}
+    .hero{padding:var(--spacing-8) 0;min-height:calc(100dvh - 112px);display:flex;align-items:center;background:linear-gradient(135deg,#1a365d 0%,#1e4a7a 25%,#0066CC 60%,#0052A3 100%);position:relative;overflow:hidden}
     .hero-content{display:grid;grid-template-columns:1fr;gap:var(--spacing-12);align-items:center;position:relative;z-index:1;text-align:center;max-width:900px;margin:0 auto}
     .hero-title{margin-bottom:var(--spacing-4);color:var(--color-neutral-0);text-shadow:0 2px 8px rgba(0,0,0,0.5),0 4px 16px rgba(0,0,0,0.3);font-weight:var(--font-weight-bold)}
     .hero-subtitle{font-size:var(--font-size-xl);color:var(--color-neutral-0);margin-bottom:var(--spacing-8);text-shadow:0 2px 6px rgba(0,0,0,0.4),0 1px 3px rgba(0,0,0,0.3);font-weight:var(--font-weight-medium)}
@@ -289,7 +289,7 @@
                 </div>
 
                 <!-- Hero Image (Right Side) -->
-                <div class="hero-image-container" style="display: block !important; position: relative; width: 100%; max-width: 600px;">
+                <div class="hero-image-container">
                     <div class="hero-image-wrapper">
                         <picture>
                             <!-- WebP format for modern browsers -->
@@ -320,7 +320,7 @@
                                 type="image/jpeg"
                             >
 
-                            <!-- Default image with placeholder -->
+                            <!-- Default image -->
                             <img
                                 src="assets/images/pexels/hero/homepage-hero.jpg"
                                 alt="Modern JEDH eye and dental hospital reception area with professional staff"
@@ -328,8 +328,6 @@
                                 width="800"
                                 height="600"
                                 loading="eager"
-                                style="display: block !important; width: 100%; height: auto; border-radius: 16px;"
-                                onerror="console.error('Hero image failed to load:', this.src); alert('Hero image not found at: ' + this.src);"
                             >
                         </picture>
                     </div>
@@ -576,9 +574,19 @@
                 <p data-en="We accept major health insurance providers" data-hi="हम प्रमुख स्वास्थ्य बीमा प्रदाताओं को स्वीकार करते हैं">We accept major health insurance providers</p>
             </div>
             <div class="insurance-logos">
-                <!-- Insurance logos will be loaded from Cashless folder -->
                 <div class="insurance-grid" id="insuranceGrid">
-                    <!-- Logos will be dynamically loaded -->
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/rghs.jpg" alt="RGHS" width="120" height="60" loading="lazy"></div>
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/star-health.jpg" alt="Star Health Insurance" width="120" height="60" loading="lazy"></div>
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/hdfc.jpg" alt="HDFC ERGO" width="120" height="60" loading="lazy"></div>
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/care.jpg" alt="Care Health Insurance" width="120" height="60" loading="lazy"></div>
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/bajaj.jpg" alt="Bajaj Allianz" width="120" height="60" loading="lazy"></div>
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/aditya.jpg" alt="Aditya Birla Health" width="120" height="60" loading="lazy"></div>
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/new-india.jpg" alt="New India Assurance" width="120" height="60" loading="lazy"></div>
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/united-india.jpg" alt="United India Insurance" width="120" height="60" loading="lazy"></div>
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/tata-aig.jpg" alt="Tata AIG" width="120" height="60" loading="lazy"></div>
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/niva.jpg" alt="Niva Bupa" width="120" height="60" loading="lazy"></div>
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/iffco.jpg" alt="IFFCO Tokio" width="120" height="60" loading="lazy"></div>
+                    <div class="insurance-logo-item"><img src="assets/images/Cashless/chola-ms.jpg" alt="Cholamandalam MS" width="120" height="60" loading="lazy"></div>
                 </div>
             </div>
         </div>
@@ -949,37 +957,5 @@
     <!-- Scripts - Deferred for better performance -->
     <script src="js/main.js?v=2" defer></script>
 
-    <!-- Debug Script -->
-    <script>
-        window.addEventListener('load', function() {
-            console.log('=== JEDH Debug Info ===');
-
-            const heroImage = document.querySelector('.hero-image');
-            const heroContainer = document.querySelector('.hero-image-container');
-
-            console.log('Hero image element:', heroImage ? 'Found' : 'NOT FOUND');
-            console.log('Hero container element:', heroContainer ? 'Found' : 'NOT FOUND');
-
-            if (heroContainer) {
-                const computed = window.getComputedStyle(heroContainer);
-                console.log('Hero container display:', computed.display);
-                console.log('Hero container visibility:', computed.visibility);
-                console.log('Hero container opacity:', computed.opacity);
-            }
-
-            if (heroImage) {
-                console.log('Hero image src:', heroImage.src);
-                console.log('Hero image naturalWidth:', heroImage.naturalWidth);
-                console.log('Hero image complete:', heroImage.complete);
-                const computed = window.getComputedStyle(heroImage);
-                console.log('Hero image display:', computed.display);
-            }
-
-            console.log('Team slides:', document.querySelectorAll('.team-slide').length);
-            console.log('Team slider arrows:', document.querySelectorAll('.team-slider-arrow').length);
-            console.log('Team slider dots:', document.querySelectorAll('.team-slider-dot').length);
-            console.log('======================');
-        });
-    </script>
 </body>
 </html>

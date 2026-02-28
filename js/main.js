@@ -251,41 +251,8 @@ function initScrollEffects() {
 // Load Insurance Logos
 // ===================================
 function loadInsuranceLogos() {
-    const insuranceGrid = document.getElementById('insuranceGrid');
-
-    if (!insuranceGrid) return;
-
-    // Sample insurance partners (you can replace with actual logos from Cashless folder)
-    const insurancePartners = [
-        'RGHS',
-        'CGHS',
-        'Star Health',
-        'ICICI Lombard',
-        'HDFC ERGO',
-        'Care Health',
-        'Max Bupa',
-        'Bajaj Allianz',
-        'Aditya Birla',
-        'National Insurance',
-        'New India',
-        'United India'
-    ];
-
-    insurancePartners.forEach(partner => {
-        const div = document.createElement('div');
-        div.className = 'insurance-logo-item';
-
-        // For now, use text. Replace with actual image path
-        const span = document.createElement('span');
-        span.textContent = partner;
-        span.style.fontSize = '0.875rem';
-        span.style.fontWeight = '600';
-        span.style.color = '#4A4A4A';
-        span.style.textAlign = 'center';
-
-        div.appendChild(span);
-        insuranceGrid.appendChild(div);
-    });
+    // Insurance logos are now rendered as static HTML for no-JS fallback
+    // No dynamic loading needed
 }
 
 // ===================================

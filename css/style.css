@@ -958,6 +958,11 @@ img {
     color: white;
     padding: var(--spacing-2) 0;
     font-size: 0.875rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1021;
 }
 
 .top-bar-content {
@@ -1007,9 +1012,12 @@ img {
 .navbar {
     background: white;
     box-shadow: var(--shadow-sm);
-    position: sticky;
-    top: 0;
-    z-index: var(--z-index-dropdown);
+    position: fixed;
+    top: 36px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: var(--z-index-sticky);
 }
 
 .nav-wrapper {
@@ -1418,6 +1426,20 @@ input[type="radio"]:focus-visible {
     .hero-content .hero-image-container {
         display: block;
     }
+}
+
+/* Hero image */
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-xl);
 }
 
 /* Mobile/Tablet - hide hero image */

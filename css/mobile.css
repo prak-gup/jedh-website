@@ -31,58 +31,25 @@
 /* === Top Bar Mobile === */
 @media (max-width: 768px) {
     .top-bar {
-        padding: var(--spacing-2) 0;
-        font-size: 0.75rem;
-    }
-
-    .top-bar-content {
-        flex-direction: column;
-        gap: var(--spacing-2);
-        text-align: center;
-    }
-
-    .top-bar-left,
-    .top-bar-right {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: var(--spacing-3);
-    }
-
-    .top-bar-left span,
-    .top-bar-right span {
-        font-size: 0.75rem;
-    }
-
-    /* Hide email on very small screens */
-    .top-bar-left span:nth-child(2) {
         display: none;
     }
 
-    .language-switch {
-        margin-top: var(--spacing-1);
+    .navbar {
+        top: 0;
     }
 
-    .lang-btn {
-        padding: 0.2rem 0.5rem;
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .top-bar {
-        padding: var(--spacing-1) 0;
-    }
-
-    .top-bar-right span:first-child {
-        display: none; /* Hide hours on very small screens */
+    body {
+        padding-top: 76px;
     }
 }
 
 /* === Navigation Mobile === */
 @media (max-width: 768px) {
     .navbar {
-        position: sticky;
+        position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
         z-index: 1000;
         background: var(--color-neutral-0);
     }
