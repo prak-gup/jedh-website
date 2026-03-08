@@ -155,9 +155,9 @@
                 </div>
                 <div class="top-bar-right">
                     <span><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</span>
-                    <div class="language-switch">
-                        <button class="lang-btn active" data-lang="en">EN</button>
-                        <button class="lang-btn" data-lang="hi">हिं</button>
+                    <div class="language-switch" role="group" aria-label="Language selection">
+                        <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+                        <button class="lang-btn" data-lang="hi" aria-label="Switch to Hindi">हिं</button>
                     </div>
                 </div>
             </div>
@@ -221,12 +221,12 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <div class="hero-content" style="grid-template-columns: 1fr;">
-                <div class="hero-text" style="text-align: center;">
+            <div class="hero-content hero-content--centered">
+                <div class="hero-text">
                     <h1 data-en="Get in Touch" data-hi="संपर्क में रहें">Get in Touch</h1>
                     <p class="lead" data-en="We're here to help with your eye and dental care needs. Visit us, call, or message on WhatsApp." data-hi="हम आपकी नेत्र और दंत चिकित्सा देखभाल आवश्यकताओं में मदद के लिए यहां हैं। हमसे मिलें, कॉल करें, या व्हाट्सएप पर संदेश भेजें।">We're here to help with your eye and dental care needs. Visit us, call, or message on WhatsApp.</p>
 
-                    <div class="hero-ctas" style="justify-content: center;">
+                    <div class="hero-ctas">
                         <a href="https://wa.me/917976551251" class="btn btn-primary btn-lg" aria-label="Chat with us on WhatsApp">
                             <i class="fab fa-whatsapp" aria-hidden="true"></i>
                             <span data-en="Chat on WhatsApp" data-hi="व्हाट्सएप पर चैट करें">Chat on WhatsApp</span>
@@ -253,7 +253,7 @@
                     <h3 data-en="Visit Us" data-hi="हमसे मिलें">Visit Us</h3>
                     <p><strong>Jaipur Eye & Dental Hospital</strong></p>
                     <p>Jaipur, Rajasthan - 302015</p>
-                    <a href="#map" class="btn btn-outline" style="margin-top: 1rem;">
+                    <a href="#map" class="btn btn-outline">
                         <i class="fas fa-directions"></i>
                         <span data-en="Get Directions" data-hi="निर्देश प्राप्त करें">Get Directions</span>
                     </a>
@@ -266,7 +266,7 @@
                     <h3 data-en="Call Us" data-hi="हमें कॉल करें">Call Us</h3>
                     <p data-en="For appointments and queries" data-hi="नियुक्तियों और प्रश्नों के लिए">For appointments and queries</p>
                     <a href="tel:+917976551251"><strong>+91 7976551251</strong></a>
-                    <p style="margin-top: 0.5rem; font-size: 0.875rem;">Mon-Sat: 9:00 AM - 7:00 PM</p>
+                    <p class="contact-hours">Mon-Sat: 9:00 AM - 7:00 PM</p>
                 </div>
 
                 <div class="contact-card">
@@ -276,7 +276,7 @@
                     <h3 data-en="Email Us" data-hi="हमें ईमेल करें">Email Us</h3>
                     <p data-en="Send us your queries" data-hi="हमें अपने प्रश्न भेजें">Send us your queries</p>
                     <a href="mailto:dramit.eye@gmail.com"><strong>dramit.eye@gmail.com</strong></a>
-                    <p style="margin-top: 0.5rem; font-size: 0.875rem;">24-hour response time</p>
+                    <p class="contact-hours">24-hour response time</p>
                 </div>
             </div>
         </div>
@@ -288,30 +288,30 @@
             <div class="two-column">
                 <div class="info-box">
                     <h3 data-en="Working Hours" data-hi="कार्य के घंटे">Working Hours</h3>
-                    <ul class="check-list" style="margin: 1.5rem 0;">
+                    <ul class="check-list working-hours-list">
                         <li>
                             <i class="fas fa-calendar-day"></i>
                             <div>
                                 <strong>Monday - Saturday</strong>
-                                <p style="margin: 0; font-size: 0.95rem;">9:00 AM - 7:00 PM</p>
+                                <p class="contact-hours">9:00 AM - 7:00 PM</p>
                             </div>
                         </li>
                         <li>
                             <i class="fas fa-calendar-times"></i>
                             <div>
                                 <strong>Sunday</strong>
-                                <p style="margin: 0; font-size: 0.95rem;">10 AM - 12 PM (by appointment)</p>
+                                <p class="contact-hours">10 AM - 12 PM (by appointment)</p>
                             </div>
                         </li>
                         <li>
                             <i class="fas fa-exclamation-circle"></i>
                             <div>
                                 <strong data-en="Emergency Cases" data-hi="आपातकालीन मामले">Emergency Cases</strong>
-                                <p style="margin: 0; font-size: 0.95rem;" data-en="Call us during working hours" data-hi="काम के घंटों के दौरान हमें कॉल करें">Call us during working hours</p>
+                                <p class="contact-hours" data-en="Call us during working hours" data-hi="काम के घंटों के दौरान हमें कॉल करें">Call us during working hours</p>
                             </div>
                         </li>
                     </ul>
-                    <p style="font-size: 0.875rem; margin-top: 1rem;">
+                    <p class="contact-hours">
                         <i class="fas fa-info-circle"></i>
                         <span data-en="Walk-ins welcome, but appointments are recommended for shorter wait times." data-hi="वॉक-इन का स्वागत है, लेकिन कम प्रतीक्षा समय के लिए नियुक्तियों की सिफारिश की जाती है।">Walk-ins welcome, but appointments are recommended for shorter wait times.</span>
                     </p>
@@ -319,7 +319,7 @@
 
                 <div>
                     <h3 data-en="What to Bring for Your Visit" data-hi="अपनी यात्रा के लिए क्या लाएं">What to Bring for Your Visit</h3>
-                    <ul class="check-list" style="margin: 1.5rem 0;">
+                    <ul class="check-list working-hours-list">
                         <li><i class="fas fa-check-circle"></i> <span data-en="Valid ID proof (Aadhar/PAN/Driving License)" data-hi="वैध आईडी प्रूफ (आधार/पैन/ड्राइविंग लाइसेंस)">Valid ID proof (Aadhar/PAN/Driving License)</span></li>
                         <li><i class="fas fa-check-circle"></i> <span data-en="Previous medical reports and prescriptions" data-hi="पिछली चिकित्सा रिपोर्ट और प्रिस्क्रिप्शन">Previous medical reports and prescriptions</span></li>
                         <li><i class="fas fa-check-circle"></i> <span data-en="Current eyeglasses or contact lenses (if any)" data-hi="वर्तमान चश्मा या कॉन्टैक्ट लेंस (यदि कोई हो)">Current eyeglasses or contact lenses (if any)</span></li>
@@ -347,12 +347,13 @@
             <div class="map-container">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227748.38253896992!2d75.56329584863279!3d26.885147799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3702cd1a6e1%3A0x90dbff9e2d1e4a4b!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1642584695123!5m2!1sen!2sin"
+                    title="Google Maps showing Jaipur Eye &amp; Dental Hospital location"
                     allowfullscreen=""
                     loading="lazy">
                 </iframe>
             </div>
 
-            <div class="text-center" style="margin-top: 2rem;">
+            <div class="text-center map-cta">
                 <a href="https://www.google.com/maps/dir/?api=1&destination=Jaipur+Rajasthan" target="_blank" class="btn btn-secondary">
                     <i class="fas fa-directions"></i>
                     <span data-en="Get Directions on Google Maps" data-hi="गूगल मैप्स पर निर्देश प्राप्त करें">Get Directions on Google Maps</span>
@@ -405,12 +406,14 @@
                         <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
                     </div>
 
-                    <button type="submit" class="form-submit">
+                    <div aria-live="polite" id="formStatus" class="sr-only"></div>
+
+                    <button type="submit" class="form-submit btn btn-primary" id="submitBtn">
                         <i class="fas fa-paper-plane"></i>
                         <span data-en="Send Message" data-hi="संदेश भेजें">Send Message</span>
                     </button>
 
-                    <p style="font-size: 0.875rem; color: var(--text-light); margin-top: 1rem; text-align: center;">
+                    <p class="form-hint">
                         <i class="fas fa-info-circle"></i>
                         <span data-en="For urgent matters, please call us or message on WhatsApp." data-hi="तत्काल मामलों के लिए, कृपया हमें कॉल करें या व्हाट्सएप पर संदेश भेजें।">For urgent matters, please call us or message on WhatsApp.</span>
                     </p>
@@ -453,7 +456,7 @@
                 </div>
             </div>
 
-            <div class="info-box" style="max-width: 800px; margin: 2rem auto 0;">
+            <div class="info-box landmarks-box">
                 <h3 data-en="Nearby Landmarks" data-hi="नजदीकी स्थलचिह्न">Nearby Landmarks</h3>
                 <ul class="check-list">
                     <li><i class="fas fa-map-marker-alt"></i> <span data-en="Close to major shopping centers" data-hi="प्रमुख शॉपिंग सेंटर के करीब">Close to major shopping centers</span></li>
@@ -544,7 +547,7 @@
                 </div>
             </div>
 
-            <div class="medical-disclaimer" style="text-align: center; padding: 1rem 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 1rem; font-size: 0.8rem; color: rgba(255,255,255,0.6);">
+            <div class="medical-disclaimer">
                 <p>Medical Disclaimer: The information on this website is for general informational purposes only and does not constitute medical advice. Individual results may vary. Always consult a qualified healthcare provider for diagnosis and treatment decisions.</p>
             </div>
             <div class="footer-bottom">
@@ -562,39 +565,151 @@
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jaipureyedental.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact Us",
+          "item": "https://jaipureyedental.com/contact"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the working hours of JEDH?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Monday to Saturday: 9:00 AM - 7:00 PM. Sunday: 10:00 AM - 12:00 PM (by appointment only)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I book an appointment at JEDH?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can book an appointment by calling +91 7976551251 or messaging us on WhatsApp. Walk-ins are also welcome."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I bring for my first visit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Please bring a valid ID proof, previous medical reports, current eyeglasses or contact lenses, insurance documents, and a list of current medications."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Scripts - Deferred for better performance -->
     <script src="js/main.js" defer></script>
     <script>
+        // Toast notification helper
+        function showToast(message, type) {
+            var existing = document.querySelector('.form-toast');
+            if (existing) existing.remove();
+
+            var toast = document.createElement('div');
+            toast.className = 'form-toast ' + type;
+            toast.setAttribute('role', 'alert');
+            toast.innerHTML =
+                '<i class="fas ' + (type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle') + '"></i>' +
+                '<span>' + message + '</span>' +
+                '<button class="toast-close" aria-label="Close notification">&times;</button>';
+
+            document.body.appendChild(toast);
+            requestAnimationFrame(function() {
+                toast.classList.add('show');
+            });
+
+            toast.querySelector('.toast-close').addEventListener('click', function() {
+                toast.classList.remove('show');
+                setTimeout(function() { toast.remove(); }, 300);
+            });
+
+            setTimeout(function() {
+                if (toast.parentNode) {
+                    toast.classList.remove('show');
+                    setTimeout(function() { toast.remove(); }, 300);
+                }
+            }, 5000);
+        }
+
+        // Real-time form validation
+        var form = document.getElementById('contactForm');
+        var inputs = form.querySelectorAll('input[required], textarea[required]');
+        inputs.forEach(function(input) {
+            input.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    this.parentElement.classList.add('has-error');
+                } else {
+                    this.parentElement.classList.remove('has-error');
+                }
+            });
+            input.addEventListener('input', function() {
+                if (this.value.trim()) {
+                    this.parentElement.classList.remove('has-error');
+                }
+            });
+        });
+
         // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
+            var submitBtn = document.getElementById('submitBtn');
+            var formStatus = document.getElementById('formStatus');
 
             // Get form values
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+
+            // Show loading state
+            submitBtn.classList.add('loading');
 
             // Create WhatsApp message
-            let whatsappMessage = `Hi, I have a query for JEDH\n\n`;
-            whatsappMessage += `Name: ${name}\n`;
-            whatsappMessage += `Phone: ${phone}\n`;
-            if (email) whatsappMessage += `Email: ${email}\n`;
-            if (subject) whatsappMessage += `Subject: ${subject}\n`;
-            whatsappMessage += `\nMessage:\n${message}`;
+            var whatsappMessage = 'Hi, I have a query for JEDH\n\n';
+            whatsappMessage += 'Name: ' + name + '\n';
+            whatsappMessage += 'Phone: ' + phone + '\n';
+            if (email) whatsappMessage += 'Email: ' + email + '\n';
+            if (subject) whatsappMessage += 'Subject: ' + subject + '\n';
+            whatsappMessage += '\nMessage:\n' + message;
 
             // Encode message for URL
-            const encodedMessage = encodeURIComponent(whatsappMessage);
+            var encodedMessage = encodeURIComponent(whatsappMessage);
 
             // Redirect to WhatsApp
-            window.open(`https://wa.me/917976551251?text=${encodedMessage}`, '_blank');
+            window.open('https://wa.me/917976551251?text=' + encodedMessage, '_blank');
 
-            // Show success message
-            alert('Opening WhatsApp to send your message. Our team will respond shortly!');
-
-            // Reset form
-            this.reset();
+            // Remove loading and show success toast
+            setTimeout(function() {
+                submitBtn.classList.remove('loading');
+                showToast('Opening WhatsApp to send your message. Our team will respond shortly!', 'success');
+                formStatus.textContent = 'Message sent successfully via WhatsApp.';
+                form.reset();
+            }, 500);
         });
     </script>
 </body>
