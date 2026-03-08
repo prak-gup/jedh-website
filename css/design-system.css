@@ -328,49 +328,6 @@
 }
 
 /* ========================================
-   DARK MODE SUPPORT
-   ======================================== */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Surface colors */
-    --color-neutral-0: #111827;
-    --color-neutral-50: #1F2937;
-    --color-neutral-100: #374151;
-    --color-neutral-200: #4B5563;
-    --color-neutral-300: #6B7280;
-    --color-neutral-400: #9CA3AF;
-    --color-neutral-500: #D1D5DB;
-    --color-neutral-600: #E5E7EB;
-    --color-neutral-700: #F3F4F6;
-    --color-neutral-800: #F9FAFB;
-    --color-neutral-900: #FFFFFF;
-    --color-neutral-950: #FFFFFF;
-
-    /* Primary adjusted for dark backgrounds */
-    --color-primary-50: #001429;
-    --color-primary-100: #002952;
-    --color-primary-200: #003D7A;
-    --color-primary-500: #5CADFF;
-    --color-primary-600: #85C2FF;
-
-    /* Shadows for dark mode */
-    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
-    --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
-
-    /* Legacy aliases update */
-    --bg-white: var(--color-neutral-0);
-    --bg-light: var(--color-neutral-50);
-    --text-dark: var(--color-neutral-900);
-    --text-medium: var(--color-neutral-600);
-    --border-color: var(--color-neutral-200);
-  }
-}
-
-/* ========================================
    FORM NOTIFICATION / TOAST STYLES
    ======================================== */
 
