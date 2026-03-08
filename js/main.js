@@ -97,23 +97,29 @@ function initMobileMenu() {
         dropdowns.forEach(dropdown => {
             const dropdownToggle = dropdown.querySelector('a');
             const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-            
+
             if (dropdownToggle && dropdownMenu) {
+                // Set initial aria-expanded
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+
                 dropdownToggle.addEventListener('click', function(e) {
                     // Only prevent default on mobile
                     if (window.innerWidth <= 768) {
                         e.preventDefault();
                         e.stopPropagation();
-                        
+
                         // Close other dropdowns
                         dropdowns.forEach(otherDropdown => {
                             if (otherDropdown !== dropdown) {
                                 otherDropdown.classList.remove('active');
+                                const otherToggle = otherDropdown.querySelector('a');
+                                if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
                             }
                         });
-                        
+
                         // Toggle current dropdown
-                        dropdown.classList.toggle('active');
+                        const isActive = dropdown.classList.toggle('active');
+                        dropdownToggle.setAttribute('aria-expanded', String(isActive));
                     }
                 });
             }
@@ -135,6 +141,23 @@ function initMobileMenu() {
 function initLanguageSwitch() {
     const langButtons = document.querySelectorAll('.lang-btn');
     let currentLang = 'en';
+
+    // Set aria-labels on language buttons
+    langButtons.forEach(btn => {
+        const lang = btn.getAttribute('data-lang');
+        if (lang === 'en') {
+            btn.setAttribute('aria-label', 'Switch to English');
+        } else if (lang === 'hi') {
+            btn.setAttribute('aria-label', 'Switch to Hindi');
+        }
+    });
+
+    // Add role to language switch container
+    const langSwitch = document.querySelector('.language-switch');
+    if (langSwitch) {
+        langSwitch.setAttribute('role', 'group');
+        langSwitch.setAttribute('aria-label', 'Language selection');
+    }
 
     langButtons.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -370,33 +393,15 @@ function initScrollToTop() {
     const scrollBtn = document.createElement('button');
     scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
     scrollBtn.className = 'scroll-to-top';
-    scrollBtn.style.cssText = `
-        position: fixed;
-        bottom: 100px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: 998;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.25rem;
-    `;
+    scrollBtn.setAttribute('aria-label', 'Scroll to top');
 
     document.body.appendChild(scrollBtn);
 
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 500) {
-            scrollBtn.style.opacity = '1';
+            scrollBtn.classList.add('visible');
         } else {
-            scrollBtn.style.opacity = '0';
+            scrollBtn.classList.remove('visible');
         }
     });
 

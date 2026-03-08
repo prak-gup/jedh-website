@@ -326,3 +326,293 @@
   outline: 2px solid var(--color-primary-500);
   outline-offset: 2px;
 }
+
+/* ========================================
+   DARK MODE SUPPORT
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Surface colors */
+    --color-neutral-0: #111827;
+    --color-neutral-50: #1F2937;
+    --color-neutral-100: #374151;
+    --color-neutral-200: #4B5563;
+    --color-neutral-300: #6B7280;
+    --color-neutral-400: #9CA3AF;
+    --color-neutral-500: #D1D5DB;
+    --color-neutral-600: #E5E7EB;
+    --color-neutral-700: #F3F4F6;
+    --color-neutral-800: #F9FAFB;
+    --color-neutral-900: #FFFFFF;
+    --color-neutral-950: #FFFFFF;
+
+    /* Primary adjusted for dark backgrounds */
+    --color-primary-50: #001429;
+    --color-primary-100: #002952;
+    --color-primary-200: #003D7A;
+    --color-primary-500: #5CADFF;
+    --color-primary-600: #85C2FF;
+
+    /* Shadows for dark mode */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+    --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+
+    /* Legacy aliases update */
+    --bg-white: var(--color-neutral-0);
+    --bg-light: var(--color-neutral-50);
+    --text-dark: var(--color-neutral-900);
+    --text-medium: var(--color-neutral-600);
+    --border-color: var(--color-neutral-200);
+  }
+}
+
+/* ========================================
+   FORM NOTIFICATION / TOAST STYLES
+   ======================================== */
+
+.form-toast {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  max-width: 400px;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-radius: var(--radius-md);
+  color: var(--color-neutral-0);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  z-index: var(--z-index-tooltip);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  box-shadow: var(--shadow-lg);
+  transform: translateX(120%);
+  transition: transform var(--duration-slow) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-toast.show {
+  transform: translateX(0);
+}
+
+.form-toast.success {
+  background: var(--color-success-600);
+}
+
+.form-toast.error {
+  background: var(--color-error-600);
+}
+
+.form-toast .toast-close {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+  margin-left: auto;
+  padding: 0 var(--spacing-1);
+  opacity: 0.8;
+  min-height: auto;
+}
+
+.form-toast .toast-close:hover {
+  opacity: 1;
+}
+
+/* ========================================
+   FORM VALIDATION STYLES
+   ======================================== */
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--color-error-500);
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+  border-color: var(--color-success-500);
+}
+
+.form-error-message {
+  color: var(--color-error-600);
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-1);
+  display: none;
+}
+
+.form-group.has-error .form-error-message {
+  display: block;
+}
+
+.form-group.has-error input,
+.form-group.has-error textarea {
+  border-color: var(--color-error-500);
+}
+
+/* ========================================
+   SCROLL TO TOP BUTTON (moved from inline JS)
+   ======================================== */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--color-primary-500);
+  color: var(--color-neutral-0);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--timing-ease),
+              transform var(--duration-base) var(--timing-ease);
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+}
+
+/* ========================================
+   MAP CONTAINER
+   ======================================== */
+
+.map-container {
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ========================================
+   CONTACT PAGE HERO - CENTERED LAYOUT
+   ======================================== */
+
+.page-hero .hero-content--centered {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.page-hero .hero-content--centered .hero-ctas {
+  justify-content: center;
+}
+
+/* ========================================
+   CONTACT CARD SPACING
+   ======================================== */
+
+.contact-card .btn-outline {
+  margin-top: var(--spacing-4);
+}
+
+.contact-card p.contact-hours {
+  margin-top: var(--spacing-2);
+  font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   ULTRA-WIDE SCREEN SUPPORT
+   ======================================== */
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* ========================================
+   BUTTON LOADING STATE
+   ======================================== */
+
+.form-submit.loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.form-submit.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  border-top-color: var(--color-neutral-0);
+  animation: btn-spinner 0.6s linear infinite;
+}
+
+/* ========================================
+   WORKING HOURS & INFO LIST
+   ======================================== */
+
+.working-hours-list {
+  margin: var(--spacing-6) 0;
+}
+
+.working-hours-list p.contact-hours {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ========================================
+   LANDMARKS INFO BOX
+   ======================================== */
+
+.landmarks-box {
+  max-width: 800px;
+  margin: var(--spacing-8) auto 0;
+}
+
+/* ========================================
+   MAP CTA
+   ======================================== */
+
+.map-cta {
+  margin-top: var(--spacing-8);
+}
+
+/* ========================================
+   FORM HINT TEXT
+   ======================================== */
+
+.form-hint {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-500);
+  margin-top: var(--spacing-4);
+  text-align: center;
+}
+
+/* ========================================
+   MEDICAL DISCLAIMER
+   ======================================== */
+
+.medical-disclaimer {
+  text-align: center;
+  padding: var(--spacing-4) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: var(--spacing-4);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
