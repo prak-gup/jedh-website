@@ -110,6 +110,13 @@
     <!-- Mobile Responsive CSS -->
     <link rel="stylesheet" href="css/mobile.css">
 
+    <style>
+    .homepage-hero .hero-image-container{display:block !important;max-width:min(100%,520px)}
+    .homepage-hero .hero-image-wrapper picture{display:block}
+    @media(max-width:991px){.homepage-hero .hero-image-container{margin-top:var(--spacing-8)}}
+    @media(min-width:992px){.homepage-hero .hero-image-container{margin-top:0}}
+    </style>
+
     <!-- Load fonts asynchronously -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
@@ -251,7 +258,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero homepage-hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
