@@ -53,6 +53,18 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 # LLMs.txt for AI systems
 # See: https://jaipureyedental.com/llms.txt
 # See: https://jaipureyedental.com/llms-full.txt
