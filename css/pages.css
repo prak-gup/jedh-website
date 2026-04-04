@@ -179,7 +179,7 @@
     animation: fadeInUp 1s ease-out 0.8s both;
 }
 
-/* Hide hero-image elements on subpages only */
+/* Hide any hero-image elements on sub-pages that might still exist */
 .page-hero .hero-image,
 .page-hero img:not(.logo-img):not(.footer-logo),
 .content-image img {

@@ -1,45 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://blog.jaipureyedental.com/</loc>
-    <lastmod>2026-01-15</lastmod>
+    <loc>https://jaipureyedental.com/blog/</loc>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blog.jaipureyedental.com/cataract-surgery-what-to-expect</loc>
-    <lastmod>2026-01-15</lastmod>
+    <loc>https://jaipureyedental.com/blog/bladeless-lasik-vs-traditional-lasik-what-jaipur-patients-need-to-know-in-2026/</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blog.jaipureyedental.com/dental-implants-vs-dentures</loc>
-    <lastmod>2026-01-10</lastmod>
+    <loc>https://jaipureyedental.com/blog/lasik-surgery-cost-in-jaipur-2026-price-guide/</loc>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blog.jaipureyedental.com/lasik-surgery-am-i-good-candidate</loc>
-    <lastmod>2026-01-05</lastmod>
+    <loc>https://jaipureyedental.com/blog/holi-eye-safety-what-to-do-if-color-enters-your-eye-step-by-step-first-aid/</loc>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blog.jaipureyedental.com/invisalign-clear-path-perfect-smile</loc>
-    <lastmod>2025-12-20</lastmod>
+    <loc>https://jaipureyedental.com/blog/high-myopia-your-retina-needs-a-6-monthly-check-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blog.jaipureyedental.com/10-daily-habits-healthy-eyes</loc>
-    <lastmod>2025-12-15</lastmod>
+    <loc>https://jaipureyedental.com/blog/trifocal-lens-implant-see-clearly-at-all-distances-after-cataract-surgery-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blog.jaipureyedental.com/oral-hygiene-best-practices</loc>
-    <lastmod>2025-12-10</lastmod>
+    <loc>https://jaipureyedental.com/blog/full-mouth-dental-implants-a-patients-journey-from-indore-to-jaipur-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/terrified-of-cataract-surgery-heres-what-actually-happens/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/does-lasik-wear-off-after-10-years-the-truth-about-aging-eyes/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/at-home-whitening-kits-vs-professional-teeth-whitening-in-jaipur-what-actually-works/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/lasik-in-2026-the-honest-no-jargon-guide-from-someone-who-got-it-done/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/the-future-of-eye-care-2026-trends-transforming-vision-health/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/5-essential-tips-to-protect-your-vision-in-the-digital-age/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/single-sitting-root-canal-quick-dental-tip-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/warning-signs-of-a-failing-rct-quick-dental-care-tip-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/cataract-surgery-fear-before-relief-after-quick-eye-care-tip-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/overcoming-fear-of-cataract-surgery-quick-eye-care-tip-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/tear-quality-test-why-screen-time-makes-it-essential-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/can-alcohol-cause-blindness-quick-eye-care-tip-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/love-your-vision-5-simple-ways-to-protect-your-eyes-quick-eye-care-tip-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/5-easy-tips-to-keep-your-glasses-clean-scratch-free-quick-eye-care-tip-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jaipureyedental.com/blog/toric-iol-for-cataract-surgery-fix-astigmatism-too-quick-eye-care-tip-jedh/</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

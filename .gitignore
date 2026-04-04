@@ -103,3 +103,6 @@ jedh-theme/
 !sitemap.xml
 !sitemap-main.xml
 !sitemap-blog.xml
+
+# Local Netlify folder
+.netlify
