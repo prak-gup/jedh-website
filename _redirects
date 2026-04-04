@@ -1,1 +1,3 @@
-/blog/* https://31.97.233.133/blog/ 301
+# Proxy blog requests to WordPress (200 = proxy, not redirect)
+# WordPress serves content, but URL stays on jaipureyedental.com/blog/
+/blog/*  https://blog.jaipureyedental.com/:splat  200!
